@@ -51,9 +51,9 @@ new mysql_TRANSFER;
 #define void%0(%1) forward%0(%1); public%0(%1) // чтоб не писать по 2 раза
 
 //------------------------------------------------------------------------------
-#define Mode_Site 		"oasis-rp.ru"	//сайт
+#define Mode_Site 		"www.sky8web.ru"	//сайт
 new Pass_num;
-#define Mode_City       "Oasis"
+#define Mode_City       "Sky Web"
 //#define MAX_AFK_TIME 	(3000)
 //
 #define MAX_ANTI_PVAR 50
@@ -329,10 +329,10 @@ CrearZombie(j,Float:pX,Float:pY,Float:pZ,Float:angle)
 	return x;
 }*/
 //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-#define Mode_Name 						"Oasis Role Play"	//полностью название
-#define Mode_Names 						"Oasis-RP"		//сокращенно
+#define Mode_Name 						"Sky Web"	//полностью название
+#define Mode_Names 						"sky8web"		//сокращенно
 #define Mode_Mail 						"none"	//почта сервера
-#define Mode_Forum 						"Oasis-rp.ru/forum"	//форум
+#define Mode_Forum 						"sky8web.ru/forum"	//форум
 //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 native IsValidVehicle(vehicleid);
 #pragma dynamic 100000
@@ -525,7 +525,7 @@ enum langinfo
 new VehID[MAX_PLAYERS];
 new Language[55][langinfo]=
 {
-	{"{FFFFFF}\tДобро пожаловать  на "COLOR_PROJECT_EX"Oasis Role Play{FFFFFF}\n\n","{FFFFFF}Welcome to "COLOR_PROJECT_EX"Oasis Project{FFFFFF}\n\n"},//0
+	{"{FFFFFF}\tДобро пожаловать  на "COLOR_PROJECT_EX"Sky Web{FFFFFF}\n\n","{FFFFFF}Welcome to "COLOR_PROJECT_EX"Sky Web Project{FFFFFF}\n\n"},//0
 	{"Ваш никнейм зарегистрирован\nВведите свой пароль\n","Please enter your password\n"},//1
 	{"{1578af}Пароль не верный! Осталось попыток: %d","{FFFFFF}You have {1578af}%d{FFFFFF} attempts"},//2
 	{"Авторизация","Authorization"},//3
@@ -548,7 +548,7 @@ new Language[55][langinfo]=
 	{"{1578af}Всегда","{1578af}Always"},//20
 	{"{1578af}Никогда","{1578af}Never"},//21
 	{"Настройки","Settings"},//22
-	{"Добро пожаловать на "COLOR_PROJECT_EX"Oasis Role Play!","Welcome to Oasis Project!"},//23
+	{"Добро пожаловать на "COLOR_PROJECT_EX"Sky Web!","Welcome to Sky Web Project!"},//23
 	{"{FFFFFF}Добро пожаловать, {1578af}%s{FFFFFF}\n\n","{FFFFFF}Welcome, {1578af}%s{FFFFFF}\n\n"},//24
 	{"Этот аккаунт {1578af}не зарегистрирован {FFFFFF}на нашем серере.\n","This account {1578af}is not registed {FFFFFF}on our server.\n"},//25"
 	{"Для регистрации введите пароль.\n","For registration enter password.\n"},//26
@@ -571,7 +571,7 @@ new Language[55][langinfo]=
 	{"На порталах","On the portals"},//43
 	{"В поисковике","Google"},//44
 	{"Другое","Other"},//45
-	{"Благодарим вас за регистрацию на нашем сервере","[Help] {FFFFFF}Thank you for registration on Oasis Project"},//46
+	{"Благодарим вас за регистрацию на нашем сервере","[Help] {FFFFFF}Thank you for registration on Sky Web Project"},//46
 	{"Сейчас вам желательно добраться до мэрии и получить паспорт","[Help] {FFFFFF}Right now you need to reach City Hall and get passport"},//47
 	{"Зарегистрировался новый игрок: "COLOR_PROJECT_EX"%s {FFFFFF}(ID: %i)","Congratulations to our new player"},//48
 
@@ -7101,13 +7101,13 @@ void OnTransferAccount(playerid, Name[])
 	cache_get_data(rows, fields);
 	if(rows)
 	{
-	    ShowPlayerDialogEx(playerid,2106,1,"","{FFFFFF}Такой аккаунт уже зарегистрирован на сервере Everest\nВыберете другой ник","Сменить","Отмена");
+	    ShowPlayerDialogEx(playerid,2106,1,"","{FFFFFF}Такой аккаунт уже зарегистрирован на сервере Sky Web 2\nВыберете другой ник","Сменить","Отмена");
 		return true;
 		
 	}
 	else
 	{
-		OnPlayerRegisterOnEverest(playerid, PlayerInfo[playerid][pPassword],Name);
+		OnPlayerRegisterOnSky Web 2(playerid, PlayerInfo[playerid][pPassword],Name);
 	}
 	return 1;
 }
@@ -7668,55 +7668,55 @@ stock ServerName(Bonus_X2)
 			{
 				if(GLS[22] > 0)
 				{
-				    SendRconCommand( "hostname Oasis RP | Russian");
+				    SendRconCommand( "hostname Sky Web | v0.03.12 | vk.com/sky8web");
 				}
 				else
 				{
-					SendRconCommand(  "hostname Oasis RP | Russian");
+					SendRconCommand(  "hostname Sky Web | v0.03.12 | vk.com/sky8web");
 				}
 			}
-			else { SendRconCommand( "hostname Oasis RP | Russian");}
+			else { SendRconCommand( "hostname Sky Web | v0.03.12 | vk.com/sky8web");}
 		}
 	case 1:
 		{
-			TextDrawSetString(URL[3], "Everest");
+			TextDrawSetString(URL[3], "SAMP 2");
 
 			if(!Bonus_X2)
 			{
 				//SendRconCommand( "hostname  Роле Плей | Эверест | РУЛЕТКА");
 				if(GLS[22] > 0)
 				{
-				    SendRconCommand( "hostnameOasis Role Play | Everest | X2 опыт и X1.4 донат!");
+				    SendRconCommand( "hostname Sky Web 2 | SAMP 2 | X2 опыт и X1.4 донат!");
 				}
 				else
 				{
-					SendRconCommand( "hostnameOasis Role Play | Everest");
+					SendRconCommand( "hostname Sky Web 2 | SAMP 2");
 				}
 			}
 			else
 			{
 				//	SendRconCommand( "hostname Юнион Роле Плей | Эверест | (Действует X2!)");
-				SendRconCommand( "hostnameOasis Role Play | Everest | (Действует X2!)");
+				SendRconCommand( "hostname Sky Web 2 | SAMP 2 | (Действует X2!)");
 			}
 		}
 	case 2:
 		{
-			TextDrawSetString(URL[3], "Elbrus");
+			TextDrawSetString(URL[3], "SAMP 3");
 
 			if(!Bonus_X2)
 			{
 				if(GLS[22] > 0)
 				{
-				    SendRconCommand( "hostname Юнион Роле Плей | Эльбрус | (Перенос!)");
+				    SendRconCommand( "hostname Sky Web 3 | SAMP 3 | (Перенос!)");
 				}
 				else
 				{
-					SendRconCommand( "hostname Юнион Роле Плей | Эльбрус | (Перенос!)");
+					SendRconCommand( "hostname Sky Web 3 | SAMP 3 | (Перенос!)");
 				}
 			}
 			else
 			{
-				SendRconCommand( "hostname Юнион Роле Плей | Эльбрус | (Перенос!)");
+				SendRconCommand( "hostname Sky Web 3 | SAMP 3 | (Перенос!)");
 			}
 		}
 	}
@@ -7725,9 +7725,9 @@ stock ServerName(Bonus_X2)
 }
 new ServerNom[][] =
 {
-	"Oasis",
-	"Everest",
-	"Elbrus"
+	"Sky Web",
+	"Sky Web 2",
+	"Sky Web 3"
 };
 //native AddFake(id, name[]);
 //native SetFakePing(id, ping);
@@ -7803,14 +7803,14 @@ public OnGameModeInit()
 
 	CurrentPlayers = 0;
 	new TimeToLoad = GetTickCount();
-	//SendRconCommand("hostnameOasis Role Play | Oasis.ru");
-	//	SendRconCommand("hostname       « ] Юнион Роле Плей | Oasis.ru [ »");
-	//SendRconCommand("hostnameOasis Role Play | Oasis.ru | Русский сервер");
+	//SendRconCommand("hostname Sky Web | sky8web.ru");
+	//	SendRconCommand("hostname       « ] SAMP 2 | sky8web.ru [ »");
+	//SendRconCommand("hostname Sky Web | sky8web.ru | Русский сервер");
 	SendRconCommand("password ");
 	SendRconCommand("language Russian/Русский");
 	SendRconCommand("ackslimit 15000");
 	SetGameModeText("MOORPG");
-	SendRconCommand("weburl www.ya.ru");
+	SendRconCommand("weburl www.sky8web.ru");
 	//mysql = mysql_current_handle();
 	///	if(mysql == 0)
 	//	{
@@ -7882,16 +7882,16 @@ public OnGameModeInit()
 	case 1:
 		{
 			mer = CreateDynamicObject(19329, 1480.213867, -1660.456176, 14.825304, 0.000000, 0.000000, 0.000000, -1, -1, -1, 300.00);
-			SetDynamicObjectMaterialText(mer, 0, "Everest", 130, "Ariel", 170, 0, 0xFF000000, 0x00000000, 1);
+			SetDynamicObjectMaterialText(mer, 0, "Sky Web 2", 130, "Ariel", 170, 0, 0xFF000000, 0x00000000, 1);
 			mer = CreateDynamicObject(19329, 1480.193847, -1660.476196, 14.808300, 0.000000, 0.000000, 0.000000, -1, -1, -1, 300.00);
-			SetDynamicObjectMaterialText(mer, 0, "Everest", 130, "Ariel", 170, 0, 0xFFFFFFFF, 0x00000000, 1);
+			SetDynamicObjectMaterialText(mer, 0, "Sky Web 2", 130, "Ariel", 170, 0, 0xFFFFFFFF, 0x00000000, 1);
 		}
 	case 2:
 		{
 			mer = CreateDynamicObject(19329, 1480.213867, -1660.456176, 14.825304, 0.000000, 0.000000, 0.000000, -1, -1, -1, 300.00);
-			SetDynamicObjectMaterialText(mer, 0, "Elbrus", 130, "Ariel", 170, 0, 0xFF000000, 0x00000000, 1);
+			SetDynamicObjectMaterialText(mer, 0, "Sky Web 3", 130, "Ariel", 170, 0, 0xFF000000, 0x00000000, 1);
 			mer = CreateDynamicObject(19329, 1480.193847, -1660.476196, 14.808300, 0.000000, 0.000000, 0.000000, -1, -1, -1, 300.00);
-			SetDynamicObjectMaterialText(mer, 0, "Elbrus", 130, "Ariel", 170, 0, 0xFFFFFFFF, 0x00000000, 1);
+			SetDynamicObjectMaterialText(mer, 0, "Sky Web 3", 130, "Ariel", 170, 0, 0xFFFFFFFF, 0x00000000, 1);
 		}
 	}
 	SetWeather(Weathers[Weather]);
@@ -7949,8 +7949,8 @@ public OnGameModeInit()
 	LoadTriggers();
 
 
-	//	SendRconCommand("hostnameOasis Role Play | Oasis.ru | Русский сервер");
-	//  SendRconCommand("hostnameOasis Role Play | Oasis.ru | Действует акция");
+	//	SendRconCommand("hostname Sky Web | sky8web.ru | Русский сервер");
+	//  SendRconCommand("hostname Sky Web | sky8web.ru | Действует акция");
 
 	new string[500];
 
@@ -10940,7 +10940,7 @@ public OnGameModeInit()
 	TextDrawFont(MenuIcon[15], 0);
 	TextDrawSetSelectable(MenuIcon[15], 0);
 
-	MenuIcon[16] = TextDrawCreate(103.666671, 411.911041, "Oasis Role Play"); // Надпись в меню нюион типа
+	MenuIcon[16] = TextDrawCreate(103.666671, 411.911041, "Sky Web"); // Надпись в меню нюион типа
 	TextDrawLetterSize(MenuIcon[16], 0.429666, 1.832296);
 	TextDrawAlignment(MenuIcon[16], 1);
 	TextDrawColor(MenuIcon[16], 389689981);
@@ -11027,7 +11027,7 @@ public OnGameModeInit()
 	TextDrawFont(URL[3], 0);
 	TextDrawSetProportional(URL[3], 1);*/
 
-	URL[0] = TextDrawCreate(551.1091455, 0.966668, "O");
+	URL[0] = TextDrawCreate(551.1091455, 0.966668, "S");
 	TextDrawLetterSize(URL[0], 0.686001, 3.567470);
 	TextDrawAlignment(URL[0], 1);
 	TextDrawColor(URL[0], COLOR_PROJECT);
@@ -11038,7 +11038,7 @@ public OnGameModeInit()
 	TextDrawSetProportional(URL[0], 1);
 	TextDrawSetShadow(URL[0], 1);
 
-	URL[1] = TextDrawCreate(567.899291, 7.500010, "asis-RP");
+	URL[1] = TextDrawCreate(567.899291, 7.500010, "ky Web");
 	TextDrawLetterSize(URL[1], 0.308999, 1.396669);
 	TextDrawAlignment(URL[1], 1);
 	TextDrawColor(URL[1], -1);
@@ -11049,7 +11049,7 @@ public OnGameModeInit()
 	TextDrawSetProportional(URL[1], 1);
 	TextDrawSetShadow(URL[1], 1);
 
-	URL[2] = TextDrawCreate(567.898681, 17.933336, "asis-rp.ru");
+	URL[2] = TextDrawCreate(567.898681, 17.933336, "ky8web.ru");
 	TextDrawLetterSize(URL[2], 0.180999, 1.373336);
 	TextDrawAlignment(URL[2], 1);
 	TextDrawColor(URL[2], -1);
@@ -11060,7 +11060,7 @@ public OnGameModeInit()
 	TextDrawSetProportional(URL[2], 1);
 	TextDrawSetShadow(URL[2], 1);
 
-	URL[3] = TextDrawCreate(567.898681, 26.633369, "Elbrus");//Everest
+	URL[3] = TextDrawCreate(567.898681, 26.633369, "Sky Web 3");//Sky Web 2
 	TextDrawLetterSize(URL[3], 0.260000, 1.604160);
 	TextDrawAlignment(URL[3], 1);
 	TextDrawColor(URL[3], COLOR_PROJECT);
@@ -12825,7 +12825,7 @@ public MysqlReferalCheck(playerid)
 			{
 				SendClientMessage(refid, COLOR_RED, "Вы не получили бонус за приведенного вами игрока в связи с причинами указаными ниже:");
 				SendClientMessage(refid, COLOR_RED, "Вы подозреваетесь в мошенничестве, все данные были отосланы администраторам");
-				SendClientMessage(refid, -1, "Вы можете обжаловать решение античита на форуме Oasis.ru/forum");
+				SendClientMessage(refid, -1, "Вы можете обжаловать решение античита на форуме sky8web.ru/forum");
 				format(string, sizeof(string), "%s[%d][%s] И %s[%d][%s] ПОДОЗРЕВАЮТСЯ В ПОПЫТКЕ ФАРМА РЕФЕРАЛОК.",Name(playerid),playerid,PlayerIp[playerid],Referal,refid,PlayerIp[refid]);
 				SendAdminsMessage(COLOR_RED,string);
 				return true;
@@ -12854,7 +12854,7 @@ void AntiFroud(playerid,Referal[])
 	{
 		SendClientMessage(playerid, COLOR_RED, "Вы не получили бонус за приведенного вами игрока в связи с причинами указаными ниже:");
 		SendClientMessage(playerid, COLOR_RED, "Вы подозреваетесь в мошенничестве, все данные были отосланы администраторам");
-		SendClientMessage(playerid, -1, "Вы можете обжаловать решение античита на форуме Oasis.ru/forum");
+		SendClientMessage(playerid, -1, "Вы можете обжаловать решение античита на форуме sky8web.ru/forum");
 		format(string, sizeof(string), "%s[%d][%s] И %s[%s][%s] ПОДОЗРЕВАЮТСЯ В ПОПЫТКЕ ФАРМА РЕФЕРАЛОК.",Name(playerid),playerid,PlayerIp[playerid],Referal,RegIP,OldIP);
 		SendAdminsMessage(COLOR_RED,string);
 		return true;
@@ -17157,10 +17157,10 @@ protectme(playerid)
 	if(j == -1) return true;
 	protectingsomeone[playerid] = true;
 	SendClientMessage(playerid, -1, "Врата ада открылись.");
-	//	PlayMusicForPlayer(playerid, "http://Oasis.ru/music/new_round.mp3", 10, MUSIC_ID_ROUND);
+	//	PlayMusicForPlayer(playerid, "http://sky8web.ru/music/new_round.mp3", 10, MUSIC_ID_ROUND);
 	new Float:ObjectPosition[3];
 	GetPlayerPos(playerid,ObjectPosition[0],ObjectPosition[1],ObjectPosition[2]);
-	PlayMusicForAllEx("http://Oasis.ru/music/new_round.mp3",ObjectPosition[0],ObjectPosition[1],ObjectPosition[2],30.99,10,MUSIC_ID_ROUND,j);
+	PlayMusicForAllEx("http://sky8web.ru/music/new_round.mp3",ObjectPosition[0],ObjectPosition[1],ObjectPosition[2],30.99,10,MUSIC_ID_ROUND,j);
 	return true;
 }
 CMD:getweapons(playerid, params[])
@@ -20617,7 +20617,7 @@ public OnPlayerPickUpPickup(playerid, pickupid)
 		J_SetPlayerPos(playerid, -899.2206,-2090.9507,1610.0308);
 		J_SetPlayerFacingAngle(playerid, 272.9626);
 
-		PlayMusicForPlayer(playerid, "http://Oasis.ru/music/new_round.mp3", 10, MUSIC_ID_ROUND);
+		PlayMusicForPlayer(playerid, "http://sky8web.ru/music/new_round.mp3", 10, MUSIC_ID_ROUND);
 		_GiveGun(playerid,24,15);
 		_GiveGun(playerid,31,75);
 		TextDrawShowForPlayer(playerid,Textdraw4);
@@ -20864,7 +20864,7 @@ public OnPlayerPickUpPickup(playerid, pickupid)
 
 	else if(pickupid == ControlMusic)
 	{
-		ShowPlayerDialogEx(playerid, 2044, DIALOG_STYLE_INPUT, "BrainDit-Пульт", "{FFFFFF}Введите ссылку .mp3\nПример: http://Oasis.ru/music/aleluya.mp3", "Выбрать", "Отмена");
+		ShowPlayerDialogEx(playerid, 2044, DIALOG_STYLE_INPUT, "BrainDit-Пульт", "{FFFFFF}Введите ссылку .mp3\nПример: http://sky8web.ru/music/aleluya.mp3", "Выбрать", "Отмена");
 		return true;
 	}
 	else if(pickupid == HealExitPickup)
@@ -21903,7 +21903,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 			//printf("%f %f   %f %f",PlayerInfo[ playerid ][ AC_AirBrk ][ 0 ], PlayerInfo[ playerid ][ AC_AirBrk ][ 1 ],  x, y);
 		    if(GetDistance(PlayerInfo[ playerid ][ AC_AirBrk ][ 0 ], PlayerInfo[ playerid ][ AC_AirBrk ][ 1 ],  BumBoxPos[playerid][0], BumBoxPos[playerid][1]) < 3.0)
 		    {
-				ShowPlayerDialogEx(playerid,2107,DIALOG_STYLE_LIST, "Выберите радио волну:","{FF0000}0. Отключить радио\n1.Oasis FM\n2. Зайцев FM\n{FF2C00}3. Европа +\n{FF5000}4. Record FM\n{FF8700}5. Hit FM", "Включить", "Отмена");
+				ShowPlayerDialogEx(playerid,2107,DIALOG_STYLE_LIST, "Выберите радио волну:","{FF0000}0. Отключить радио\n1.Sky Web FM\n2. Зайцев FM\n{FF2C00}3. Европа +\n{FF5000}4. Record FM\n{FF8700}5. Hit FM", "Включить", "Отмена");
 			}
 		}
 	}
@@ -24006,7 +24006,7 @@ ShowGrandRegiserDialog(playerid)
 	if(GLS[26] != 2)
 	{
 		new str[100],string[400];
-		strcat(string,"{FFFFFF}Добро пожаловать на Oasis Role Play\n\n");
+		strcat(string,"{FFFFFF}Добро пожаловать на Sky Web\n\n");
 		format(str,sizeof(str),"{FFFFFF}Логин: "COLOR_PROJECT_EX"%s{FFFFFF}\n",Name(playerid));
 		strcat(string,str);
 		strcat(string,"Статус аккаунта: {B9040F}Не зарегистрирован{ffffff}\n\n");
@@ -24017,9 +24017,9 @@ ShowGrandRegiserDialog(playerid)
 	else
 	{
 		new string[400];
-		strcat(string,"{FFFFFF}Добро пожаловать на Oasis Role Play\n\n");
-		strcat(string,"Сервер Elbrus объединяется с сервером Everest.");
-		strcat(string,"\nДобавьте IP сервера Everest: 149.202.4.156:7777 в избранное");
+		strcat(string,"{FFFFFF}Добро пожаловать на Sky Web\n\n");
+		strcat(string,"Сервер Sky Web 3 объединяется с сервером Sky Web 2.");
+		strcat(string,"\nДобавьте IP сервера Sky Web 2: 149.202.4.156:7777 в избранное");
 		strcat(string,"\nСотни игроков ждут вас там =)");
 		ShowPlayerDialogEx(playerid,2104,DIALOG_STYLE_MSGBOX,"Регистрация",string,"Иду!","");
 	}
@@ -31360,7 +31360,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 						NoEnterPickup[playerid] =4;
 						TogglePlayerControllableEx(playerid,false);
 
-						PlayMusicForPlayer(playerid, "http://Oasis.ru/music/new_round.mp3", 10, MUSIC_ID_ROUND);
+						PlayMusicForPlayer(playerid, "http://sky8web.ru/music/new_round.mp3", 10, MUSIC_ID_ROUND);
 						_GiveGun(playerid,24,15);
 						_GiveGun(playerid,31,75);
 						TextDrawShowForPlayer(playerid,Textdraw4);
@@ -32341,7 +32341,7 @@ new MeubleInfo[][mebleinfo]*/
 				SendClientMessage(playerid,-1,"Поздравляем! Вы купили "COLOR_PROJECT_EX"вечную сытость!");
 				return true;
 			}
-			SendClientMessage(playerid,-1,"К сожалению вам не хватает денег на счету, пополнить можно на сайте Oasis.ru");
+			SendClientMessage(playerid,-1,"К сожалению вам не хватает денег на счету, пополнить можно на сайте sky8web.ru");
 			return true;
 
 		}
@@ -32360,7 +32360,7 @@ new MeubleInfo[][mebleinfo]*/
 				SendClientMessage(playerid,-1,"Поздравляем! Вы купили "COLOR_PROJECT_EX"все стили боя!");
 				return true;
 			}
-			SendClientMessage(playerid,-1,"К сожалению вам не хватает денег на счету, пополнить можно на сайте Oasis.ru");
+			SendClientMessage(playerid,-1,"К сожалению вам не хватает денег на счету, пополнить можно на сайте sky8web.ru");
 			return true;
 
 		}
@@ -32646,7 +32646,7 @@ new PricePrize[15+1] =
 					format(string, sizeof(string), "SELECT `item_id` FROM `roulette_winners` WHERE `user_id` = '%d' AND `win_status` = '0' AND `item_id` = '%d' LIMIT 1",PlayerInfo[playerid][pID], Item_ID);
 					new Cache:result = mysql_query(mysql, string);
 					new accounts = cache_get_row_count(mysql);
-					if(accounts == 0) return SendClientMessage(playerid, COLOR_GREY, "Похоже, что вы не выигрывали этот приз на рулетке сайта Oasis.ru либо уже получили его.");
+					if(accounts == 0) return SendClientMessage(playerid, COLOR_GREY, "Похоже, что вы не выигрывали этот приз на рулетке сайта sky8web.ru либо уже получили его.");
 					cache_delete(result, mysql);
 
 					string ="";
@@ -32664,7 +32664,7 @@ new PricePrize[15+1] =
 					format(string, sizeof(string), "SELECT `item_id` FROM `roulette_winners` WHERE `user_id` = '%d' AND `win_status` = '0' AND `item_id` = '%d' LIMIT 1",PlayerInfo[playerid][pID], Item_ID);
 					new Cache:result = mysql_query(mysql, string);
 					new accounts = cache_get_row_count(mysql);
-					if(accounts == 0) return SendClientMessage(playerid, COLOR_GREY, "Похоже, что вы не выигрывали этот приз на рулетке сайта Oasis.ru либо уже получили его.");
+					if(accounts == 0) return SendClientMessage(playerid, COLOR_GREY, "Похоже, что вы не выигрывали этот приз на рулетке сайта sky8web.ru либо уже получили его.");
 					cache_delete(result, mysql);
 
 					string ="";
@@ -32683,7 +32683,7 @@ new PricePrize[15+1] =
 					format(string, sizeof(string), "SELECT `item_id` FROM `roulette_winners` WHERE `user_id` = '%d' AND `win_status` = '0' AND `item_id` = '%d' LIMIT 1",PlayerInfo[playerid][pID], Item_ID);
 					new Cache:result = mysql_query(mysql, string);
 					new accounts = cache_get_row_count(mysql);
-					if(accounts == 0) return SendClientMessage(playerid, COLOR_GREY, "Похоже, что вы не выигрывали этот приз на рулетке сайта Oasis.ru либо уже получили его.");
+					if(accounts == 0) return SendClientMessage(playerid, COLOR_GREY, "Похоже, что вы не выигрывали этот приз на рулетке сайта sky8web.ru либо уже получили его.");
 					cache_delete(result, mysql);
 
 					string ="";
@@ -32701,7 +32701,7 @@ new PricePrize[15+1] =
 					format(string, sizeof(string), "SELECT `item_id` FROM `roulette_winners` WHERE `user_id` = '%d' AND `win_status` = '0' AND `item_id` = '%d' LIMIT 1",PlayerInfo[playerid][pID], Item_ID);
 					new Cache:result = mysql_query(mysql, string);
 					new accounts = cache_get_row_count(mysql);
-					if(accounts == 0) return SendClientMessage(playerid, COLOR_GREY, "Похоже, что вы не выигрывали этот приз на рулетке сайта Oasis.ru либо уже получили его.");
+					if(accounts == 0) return SendClientMessage(playerid, COLOR_GREY, "Похоже, что вы не выигрывали этот приз на рулетке сайта sky8web.ru либо уже получили его.");
 					cache_delete(result, mysql);
 
 					string ="";
@@ -32720,7 +32720,7 @@ new PricePrize[15+1] =
 					format(string, sizeof(string), "SELECT `item_id` FROM `roulette_winners` WHERE `user_id` = '%d' AND `win_status` = '0' AND `item_id` = '%d' LIMIT 1",PlayerInfo[playerid][pID], Item_ID);
 					new Cache:result = mysql_query(mysql, string);
 					new accounts = cache_get_row_count(mysql);
-					if(accounts == 0) return SendClientMessage(playerid, COLOR_GREY, "Похоже, что вы не выигрывали этот приз на рулетке сайта Oasis.ru либо уже получили его.");
+					if(accounts == 0) return SendClientMessage(playerid, COLOR_GREY, "Похоже, что вы не выигрывали этот приз на рулетке сайта sky8web.ru либо уже получили его.");
 					cache_delete(result, mysql);
 
 					string ="";
@@ -32739,7 +32739,7 @@ new PricePrize[15+1] =
 					format(string, sizeof(string), "SELECT `item_id` FROM `roulette_winners` WHERE `user_id` = '%d' AND `win_status` = '0' AND `item_id` = '%d' LIMIT 1",PlayerInfo[playerid][pID], Item_ID);
 					new Cache:result = mysql_query(mysql, string);
 					new accounts = cache_get_row_count(mysql);
-					if(accounts == 0) return SendClientMessage(playerid, COLOR_GREY, "Похоже, что вы не выигрывали этот приз на рулетке сайта Oasis.ru либо уже получили его.");
+					if(accounts == 0) return SendClientMessage(playerid, COLOR_GREY, "Похоже, что вы не выигрывали этот приз на рулетке сайта sky8web.ru либо уже получили его.");
 					cache_delete(result, mysql);
 
 					string ="";
@@ -32757,7 +32757,7 @@ new PricePrize[15+1] =
 					format(string, sizeof(string), "SELECT `item_id` FROM `roulette_winners` WHERE `user_id` = '%d' AND `win_status` = '0' AND `item_id` = '%d' LIMIT 1",PlayerInfo[playerid][pID], Item_ID);
 					new Cache:result = mysql_query(mysql, string);
 					new accounts = cache_get_row_count(mysql);
-					if(accounts == 0) return SendClientMessage(playerid, COLOR_GREY, "Похоже, что вы не выигрывали этот приз на рулетке сайта Oasis.ru либо уже получили его.");
+					if(accounts == 0) return SendClientMessage(playerid, COLOR_GREY, "Похоже, что вы не выигрывали этот приз на рулетке сайта sky8web.ru либо уже получили его.");
 					cache_delete(result, mysql);
 
 					string ="";
@@ -32775,7 +32775,7 @@ new PricePrize[15+1] =
 					format(string, sizeof(string), "SELECT `item_id` FROM `roulette_winners` WHERE `user_id` = '%d' AND `win_status` = '0' AND `item_id` = '%d' LIMIT 1",PlayerInfo[playerid][pID], Item_ID);
 					new Cache:result = mysql_query(mysql, string);
 					new accounts = cache_get_row_count(mysql);
-					if(accounts == 0) return SendClientMessage(playerid, COLOR_GREY, "Похоже, что вы не выигрывали этот приз на рулетке сайта Oasis.ru либо уже получили его.");
+					if(accounts == 0) return SendClientMessage(playerid, COLOR_GREY, "Похоже, что вы не выигрывали этот приз на рулетке сайта sky8web.ru либо уже получили его.");
 					cache_delete(result, mysql);
 
 					string ="";
@@ -32793,7 +32793,7 @@ new PricePrize[15+1] =
 					format(string, sizeof(string), "SELECT `item_id` FROM `roulette_winners` WHERE `user_id` = '%d' AND `win_status` = '0' AND `item_id` = '%d' LIMIT 1",PlayerInfo[playerid][pID], Item_ID);
 					new Cache:result = mysql_query(mysql, string);
 					new accounts = cache_get_row_count(mysql);
-					if(accounts == 0) return SendClientMessage(playerid, COLOR_GREY, "Похоже, что вы не выигрывали этот приз на рулетке сайта Oasis.ru либо уже получили его.");
+					if(accounts == 0) return SendClientMessage(playerid, COLOR_GREY, "Похоже, что вы не выигрывали этот приз на рулетке сайта sky8web.ru либо уже получили его.");
 					cache_delete(result, mysql);
 
 					string ="";
@@ -32814,7 +32814,7 @@ new PricePrize[15+1] =
 						format(string, sizeof(string), "SELECT `item_id` FROM `roulette_winners` WHERE `user_id` = '%d' AND `win_status` = '0' AND `item_id` = '%d' LIMIT 1",PlayerInfo[playerid][pID], Item_ID);
 						new Cache:result = mysql_query(mysql, string);
 						new accounts = cache_get_row_count(mysql);
-						if(accounts == 0) return SendClientMessage(playerid, COLOR_GREY, "Похоже, что вы не выигрывали этот приз на рулетке сайта Oasis.ru либо уже получили его.");
+						if(accounts == 0) return SendClientMessage(playerid, COLOR_GREY, "Похоже, что вы не выигрывали этот приз на рулетке сайта sky8web.ru либо уже получили его.");
 						cache_delete(result, mysql);
 
 						string ="";
@@ -32843,7 +32843,7 @@ new PricePrize[15+1] =
 					format(string, sizeof(string), "SELECT `item_id` FROM `roulette_winners` WHERE `user_id` = '%d' AND `win_status` = '0' AND `item_id` = '%d' LIMIT 1",PlayerInfo[playerid][pID], Item_ID);
 					new Cache:result = mysql_query(mysql, string);
 					new accounts = cache_get_row_count(mysql);
-					if(accounts == 0) return SendClientMessage(playerid, COLOR_GREY, "Похоже, что вы не выигрывали этот приз на рулетке сайта Oasis.ru либо уже получили его.");
+					if(accounts == 0) return SendClientMessage(playerid, COLOR_GREY, "Похоже, что вы не выигрывали этот приз на рулетке сайта sky8web.ru либо уже получили его.");
 					cache_delete(result, mysql);
 
 					string ="";
@@ -32863,7 +32863,7 @@ new PricePrize[15+1] =
 					format(string, sizeof(string), "SELECT `item_id` FROM `roulette_winners` WHERE `user_id` = '%d' AND `win_status` = '0' AND `item_id` = '%d' LIMIT 1",PlayerInfo[playerid][pID], Item_ID);
 					new Cache:result = mysql_query(mysql, string);
 					new accounts = cache_get_row_count(mysql);
-					if(accounts == 0) return SendClientMessage(playerid, COLOR_GREY, "Похоже, что вы не выигрывали этот приз на рулетке сайта Oasis.ru либо уже получили его.");
+					if(accounts == 0) return SendClientMessage(playerid, COLOR_GREY, "Похоже, что вы не выигрывали этот приз на рулетке сайта sky8web.ru либо уже получили его.");
 					cache_delete(result, mysql);
 
 					new carid = -2;
@@ -32993,7 +32993,7 @@ new PricePrize[15+1] =
 			format(string, sizeof(string), "SELECT `item_id` FROM `roulette_winners` WHERE `user_id` = '%d' AND `win_status` = '0' AND `item_id` = '%d' LIMIT 1",PlayerInfo[playerid][pID], Item_ID);
 			new Cache:result = mysql_query(mysql, string);
 			new accounts = cache_get_row_count(mysql);
-			if(accounts == 0) return SendClientMessage(playerid, COLOR_GREY, "Похоже, что вы не выигрывали этот приз на рулетке сайта Oasis.ru либо уже получили его.");
+			if(accounts == 0) return SendClientMessage(playerid, COLOR_GREY, "Похоже, что вы не выигрывали этот приз на рулетке сайта sky8web.ru либо уже получили его.");
 			cache_delete(result, mysql);
 
 			new carid = -2;
@@ -34979,7 +34979,7 @@ new PricePrize[15+1] =
 					case 5:
 						{
 							if(!GetString(HouseInfo[house][hOwner],Name(playerid))) return SendClientMessage(playerid,-1,"Вы не владелец этого дома!");
-							format(string,sizeof(string),"Счет к оплате: %d\n\nВнимание если счет к оплате вашего дома выше $25000\nРаботники налоговой могут конфиксовать ваш дом.\nОплатить счета вы можете в центральном банке Oasis!",HouseInfo[house][hNalog]);
+							format(string,sizeof(string),"Счет к оплате: %d\n\nВнимание если счет к оплате вашего дома выше $25000\nРаботники налоговой могут конфиксовать ваш дом.\nОплатить счета вы можете в центральном банке Sky Web!",HouseInfo[house][hNalog]);
 							ShowPlayerDialogEx(playerid,0,0,"Домашний Счет",string,"Закрыть","");
 							return true;
 						}
@@ -41160,7 +41160,7 @@ void CreateFam(playerid, name[])
 		}
 		return true;
 	}
-	ShowPlayerDialogEx(playerid,2057,DIALOG_STYLE_INPUT,"","{FFFFFF}Стоимость создания семьи составляет 350 Рублей.\n{B9040F}Вам не хватает средств на создание семьи\nПополните счет на сайте Oasis.ru\n\n{FFFFFF}Введите название семьи и нажмите 'Принять'","Принять","Отменить");
+	ShowPlayerDialogEx(playerid,2057,DIALOG_STYLE_INPUT,"","{FFFFFF}Стоимость создания семьи составляет 350 Рублей.\n{B9040F}Вам не хватает средств на создание семьи\nПополните счет на сайте sky8web.ru\n\n{FFFFFF}Введите название семьи и нажмите 'Принять'","Принять","Отменить");
 	return 1;
 }
 void RenameFam(playerid, inputtextsave[])
@@ -42076,12 +42076,12 @@ public OnPlayerLoginMysql(playerid)
 	if(PlayerInfo[playerid][pBuyWalent]>0)Hunger(playerid,0);
 	//	SendClientMessage(playerid,COLOR_PROJECT,"Используйте: {FFFFFF}команду /menu и /gps для управления игровым персонажем.");
 	SendClientMessage(playerid,-1,"Если вам потребуется помощь по игре, то введите команду "COLOR_PROJECT_EX"/ask{FFFFFF}, вам обязательно помогут.");
-	if(strcmp("No Mail Adress", PlayerMail[playerid], true)==0) {SendClientMessage(playerid,-1,"Вы не указали "COLOR_PROJECT_EX"email{FFFFFF} адрес! Что-бы обезопасить свой аккаунт укажите его в "COLOR_PROJECT_EX"'/mm - Настройки - email'{FFFFFF}.");}
+	if(strcmp("No Mail Adress", PlayerMail[playerid], true)==0) {SendClientMessage(playerid,-1,"Вы не указали "COLOR_PROJECT_EX"email{FFFFFF} адрес! Что-бы обезопасить свой аккаунт укажите его в "COLOR_PROJECT_EX"'/mm - Настройки персонажа - Подтверждение email'{FFFFFF}.");}
 
-	SendClientMessage(playerid,-1,"Чтобы сменить стиль меню, нажмите "COLOR_PROJECT_EX"Y{FFFFFF}, далее "COLOR_PROJECT_EX"настройки персонажа{FFFFFF}, после "COLOR_PROJECT_EX"стиль меню{FFFFFF}.");
+	SendClientMessage(playerid,-1,"Чтобы сменить стиль меню, нажмите "COLOR_PROJECT_EX"Y{FFFFFF}, далее "COLOR_PROJECT_EX"Настройки персонажа{FFFFFF}, после "COLOR_PROJECT_EX"Стиль меню игрока{FFFFFF}.");
 	//	SendClientMessage(playerid,COLOR_PROJECT,"ВНИМАНИЕ!{FFFFFF} Мы перешли на систему безопасности "COLOR_PROJECT_EX"Google Authenticator{FFFFFF}. Старые коды безопасности были сброшены.");
-	if(GLS[23]>0)SendClientMessage(playerid,COLOR_GOLD,"Акция!{FFFFFF} Действуют {1578af}50{FFFFFF} процентные скидки на донат и {1578af}двойной{FFFFFF} опыт!");
-	else if(GLS[22] > 0)SendClientMessage(playerid,COLOR_GOLD,"Акция!{FFFFFF} Действуют {1578af}30{FFFFFF} процентные скидки на донат и {1578af}двойной{FFFFFF} опыт!");
+	//if(GLS[23]>0)SendClientMessage(playerid,COLOR_GOLD,"Акция!{FFFFFF} Действуют {1578af}50{FFFFFF} процентные скидки на донат и {1578af}двойной{FFFFFF} опыт!");
+	//else if(GLS[22] > 0)SendClientMessage(playerid,COLOR_GOLD,"Акция!{FFFFFF} Действуют {1578af}30{FFFFFF} процентные скидки на донат и {1578af}двойной{FFFFFF} опыт!");
 	
 	if(PlayerInfo[playerid][pGetbonus] < 4 && PlayerInfo[playerid][pGetbonus] >= 2)
 	{
@@ -42194,7 +42194,7 @@ public OnPlayerLoginMysql(playerid)
 	}
 /*	if(GLS[26] == 2)
 	{
-	    ShowPlayerDialogEx(playerid,2105,DIALOG_STYLE_MSGBOX,"Уход в закат","25-го числа Elbrus будет закрыт, у вас есть возможность перенести аккаунт на Everest (149.202.4.156:7777)\n\
+	    ShowPlayerDialogEx(playerid,2105,DIALOG_STYLE_MSGBOX,"Уход в закат","25-го числа Sky Web 3 будет закрыт, у вас есть возможность перенести аккаунт на Sky Web 2 (149.202.4.156:7777)\n\
 		Команда переноса: /transfer","Иду!","");
 	}*/
 	PlayerSpawn(playerid);
@@ -42519,7 +42519,7 @@ void GrandTimer()
 					ShowPlayerDialogEx(i,0,DIALOG_STYLE_MSGBOX,"{FF0000}Рестарт","{FFFFFF}Внимание через 5 минут будет {FF0000}рестарт {FFFFFF}сервера\n\nВы будете кикнуты сервером\nЭто {FF0000}обезопасит {FFFFFF}ваш аккаунт\nСейчас происходит сохранение всего","Закрыть","");
 				}
 				//	SendRconCommand("password 656616");
-				SendRconCommand("hostnameOasis RolePlay | Перезагрузка сервера");
+				SendRconCommand("hostname Sky Web | Перезагрузка сервера");
 				printf("[Перезагрузка] Закрыли и переиминовали сервер");
 				printf("[Перезагрузка] Отключили команды");
 			}
@@ -49396,7 +49396,7 @@ CMD:hellgate(playerid, params[])
 		
 		new Float:ObjectPosition[3];
 		GetPlayerPos(playerid,ObjectPosition[0],ObjectPosition[1],ObjectPosition[2]);
-		PlayMusicForAllEx("http://Oasis.ru/music/new_round.mp3",ObjectPosition[0],ObjectPosition[1],ObjectPosition[2],30.99,10,MUSIC_ID_ROUND,1);
+		PlayMusicForAllEx("http://sky8web.ru/music/new_round.mp3",ObjectPosition[0],ObjectPosition[1],ObjectPosition[2],30.99,10,MUSIC_ID_ROUND,1);
 		
 	}
 	return true;
@@ -50312,7 +50312,7 @@ CMD:showprize(playerid,params[])
 	format(CMDstr, sizeof(CMDstr), "SELECT `item_id` FROM `roulette_winners` WHERE `user_id` = '%d' AND `win_status` = '0' LIMIT 50",PlayerInfo[playerid][pID]);
 	new Cache:result = mysql_query(mysql, CMDstr);
 	new accounts = cache_get_row_count(mysql);
-	if(accounts == 0) return SendClientMessage(playerid, COLOR_GREY, "Похоже, что вы ничего не выигрывали на рулетке сайта Oasis.ru");
+	if(accounts == 0) return SendClientMessage(playerid, COLOR_GREY, "Похоже, что вы ничего не выигрывали на рулетке сайта sky8web.ru");
 
 	CMDstr = "";
 	format(CMDstr, sizeof(CMDstr), "Название\tКол-во\tЦена\n{FFFFFF}");
@@ -51000,7 +51000,7 @@ Float:Y;
 		Fix_SetPlayerInterior(playerid,GetPlayerInterior(id));
 		format(string,sizeof(string),"Вы телепортировались к игроку %s",Name(id));
 		SendClientMessage(playerid,COLOR_LIGHTBLUE,string);
-		PlayMusicForAllEx("http://Oasis.ru/music/aleluya.mp3",X+2,Y+2,Z,10.99,8,MUSIC_ID_ROUND,-1);
+		PlayMusicForAllEx("http://sky8web.ru/music/aleluya.mp3",X+2,Y+2,Z,10.99,8,MUSIC_ID_ROUND,-1);
 	}
 	return true;
 }
@@ -51900,7 +51900,7 @@ CMD:radio(playerid, params[])
 {
 	if(!PlayerInfo[playerid][pRadio] && !IsPlayerInAnyVehicle(playerid)) return SendClientMessage(playerid,COLOR_GREY,"{FF0000}x {AFAFAF}У вас нет радио");
 
-	ShowPlayerDialogEx(playerid,2054,DIALOG_STYLE_LIST, "Выберите радио волну:","{FF0000}0. Отключить радио\n1.Oasis FM\n2. Зайцев FM\n{FF2C00}3. Европа +\n{FF5000}4. Record FM\n{FF8700}5. Hit FM", "Включить", "Отмена");
+	ShowPlayerDialogEx(playerid,2054,DIALOG_STYLE_LIST, "Выберите радио волну:","{FF0000}0. Отключить радио\n1.Sky Web FM\n2. Зайцев FM\n{FF2C00}3. Европа +\n{FF5000}4. Record FM\n{FF8700}5. Hit FM", "Включить", "Отмена");
 
 	return true;
 }
@@ -54611,13 +54611,13 @@ ShowReportDialog(playerid)
 	strcat(sctring,str);
 	format(str,sizeof(str),"{65C360}Мы всегда готовы помочь если вы соблюдаете правила.\n");
 	strcat(sctring,str);
-	format(str,sizeof(str),"{65C360}Данные правила установлены для всех игроков Oasis RP\n\n");
+	format(str,sizeof(str),"{65C360}Данные правила установлены для всех игроков Sky Web\n\n");
 	strcat(sctring,str);
 	format(str,sizeof(str),"{65C360}Если вам долго не отвечают, не спешите писать повторно,\n");
 	strcat(sctring,str);
 	format(str,sizeof(str),"{65C360}подождите пару минут. Не забывайте, что вы не один на сервере.\n");
 	strcat(sctring,str);
-	format(str,sizeof(str),"{65C360}С уважением Администрация Oasis Role Play.\n\n");
+	format(str,sizeof(str),"{65C360}С уважением Администрация Sky Web.\n\n");
 	strcat(sctring,str);
 	return ShowPlayerDialogEx(playerid,32,1,"{65C360}Репорт",sctring,"Отправить","Отмена");
 }
@@ -56609,7 +56609,7 @@ public LoginDialogMysql(playerid, inputtextsave[])
 
 		new str[100],string[270];
 		ClearChatForPlayer(playerid);
-		format(str,sizeof(str),"{FFFFFF}Добро пожаловать на Oasis Role Play\n\n");
+		format(str,sizeof(str),"{FFFFFF}Добро пожаловать на Sky Web\n\n");
 		strcat(string,str);
 		format(str,sizeof(str),"{FFFFFF}Логин: {1578af}%s\n", PN(playerid));
 		strcat(string,str);
@@ -56617,7 +56617,7 @@ public LoginDialogMysql(playerid, inputtextsave[])
 		strcat(string,str);
 		format(str,sizeof(str),"{FFFFFF}Введите пароль и нажмите 'Далее'");
 		strcat(string,str);
-		format(str,sizeof(str),"\n{FFFFFF}Восстановить пароль можно на сайте {008000}Oasis.ru");
+		format(str,sizeof(str),"\n{FFFFFF}Восстановить пароль можно на сайте {008000}sky8web.ru");
 		strcat(string,str);
 		format(str,sizeof(str),"{FFFFFF}Авторизация {1578af}| {ffffff}Попыток:{1578af} %d{ffffff}/3",3-gPlayerLogTries[playerid]);
 		ShowPlayerDialogEx(playerid,2,3,str,string,"Войти","");
@@ -56631,7 +56631,7 @@ ShowLoginDialog(playerid)
 	DisableAllRaceCPs(playerid);
 	ResetDynamicCPs(playerid);
 	ClearChatForPlayer(playerid);
-	format(str,sizeof(str),"{FFFFFF}Добро пожаловать на Oasis Role Play\n\n");
+	format(str,sizeof(str),"{FFFFFF}Добро пожаловать на Sky Web\n\n");
 	strcat(string,str);
 	format(str,sizeof(str),"{FFFFFF}Логин: {1578af}%s\n", PN(playerid));
 	strcat(string,str);
@@ -63764,7 +63764,7 @@ ToCheat(type,playerid, code = 0)
 				else
 				{
 					ShowPlayerDialogEx(playerid,0,0,"Античит","Внимание! Код античита, который вас посадил все еще проходит тестирование\nЕсли он сработал ложно, опишите\
-					во всех деталях на форум\nто что вы делали перед тем, как вас сюда посадило.\n	Oasis.ru/forum","Ок","");
+					во всех деталях на форум\nто что вы делали перед тем, как вас сюда посадило.\n	sky8web.ru/forum","Ок","");
 				}
 			}
 		}
@@ -65055,14 +65055,14 @@ void ObjectZombieAtaca()
 				{
 					new Rands = random(9);
 					Rands = Rands +1;
-					format(string,sizeof(string),"http://Oasis.ru/music/run_%d.mp3",Rands);
+					format(string,sizeof(string),"http://sky8web.ru/music/run_%d.mp3",Rands);
 					PlayMusicForAllEx(string,ObjectPosition[0],ObjectPosition[1],ObjectPosition[2],30.99,5,MUSIC_ID_RUN,j);
 				}
 				else
 				{
 					new Rands = random(3);
 					Rands = Rands +1;
-					format(string,sizeof(string),"http://Oasis.ru/music/bite_%d.mp3",Rands);
+					format(string,sizeof(string),"http://sky8web.ru/music/bite_%d.mp3",Rands);
 					PlayMusicForAllEx(string,ObjectPosition[0],ObjectPosition[1],ObjectPosition[2],15.99,2,MUSIC_ID_BITE,j);
 				}
 
@@ -65072,7 +65072,7 @@ void ObjectZombieAtaca()
 				new string[50];
 				new Rands = random(3);
 				Rands = Rands +1;
-				format(string,sizeof(string),"http://Oasis.ru/music/bite_%d.mp3",Rands);
+				format(string,sizeof(string),"http://sky8web.ru/music/bite_%d.mp3",Rands);
 				PlayMusicForAllEx(string,ObjectPosition[0],ObjectPosition[1],ObjectPosition[2],15.99,2,MUSIC_ID_BITE,j);
 				//  StopMusic(playerid);
 				StopObject(ObjectZombie[j][i]);
@@ -65183,14 +65183,14 @@ void ObjectZombieAtaca()
 				{
 					new Rands = random(9);
 					Rands = Rands +1;
-					format(string,sizeof(string),"http://Oasis.ru/music/run_%d.mp3",Rands);
+					format(string,sizeof(string),"http://sky8web.ru/music/run_%d.mp3",Rands);
 					PlayMusicForAllEx(string,ObjectPosition[0],ObjectPosition[1],ObjectPosition[2],30.99,5,MUSIC_ID_RUN,j);
 				}
 				else
 				{
 					new Rands = random(3);
 					Rands = Rands +1;
-					format(string,sizeof(string),"http://Oasis.ru/music/bite_%d.mp3",Rands);
+					format(string,sizeof(string),"http://sky8web.ru/music/bite_%d.mp3",Rands);
 					PlayMusicForAllEx(string,ObjectPosition[0],ObjectPosition[1],ObjectPosition[2],15.99,2,MUSIC_ID_BITE,j);
 				}
 
@@ -65210,7 +65210,7 @@ void ObjectZombieAtaca()
 				new string[50];
 				new Rands = random(3);
 				Rands = Rands +1;
-				format(string,sizeof(string),"http://Oasis.ru/music/bite_%d.mp3",Rands);
+				format(string,sizeof(string),"http://sky8web.ru/music/bite_%d.mp3",Rands);
 				PlayMusicForAllEx(string,ObjectPosition[0],ObjectPosition[1],ObjectPosition[2],15.99,2,MUSIC_ID_BITE,j);
 				//  StopMusic(playerid);
 				OnZombieGiveDamagePlayerProtect(j,playerid);
@@ -65380,7 +65380,7 @@ OnZombieDeath(j,playerid)
 	new string[50],Float:ObjectPosition[3];
 	new Rands = random(6);
 	Rands = Rands +1;
-	format(string,sizeof(string),"http://Oasis.ru/music/Death_%d.mp3",Rands);
+	format(string,sizeof(string),"http://sky8web.ru/music/Death_%d.mp3",Rands);
 	GetObjectPos(ObjectZombie[j][i],ObjectPosition[0],ObjectPosition[1],ObjectPosition[2]);
 	PlayMusicForAllEx(string,ObjectPosition[0],ObjectPosition[1],ObjectPosition[2],15.99,2,MUSIC_ID_DEATH,j);
 
