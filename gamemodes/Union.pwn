@@ -7668,7 +7668,7 @@ stock ServerName(Bonus_X2)
 			{
 				if(GLS[22] > 0)
 				{
-				    SendRconCommand( "hostname Sky Web | v0.03.12 | vk.com/sky8web");
+				    SendRconCommand( "hostname Sky Web | v0.03.14 | vk.com/sky8web");
 				}
 				else
 				{
@@ -18926,17 +18926,17 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 		{
 			if(GetEngineStatus(carid) <= 0)
 			{
-				SendClientMessage(playerid,COLOR_GOLD,"Для того чтобы завести двигатель нажмите на клавишу {FFFFFF}[2]");
+				SendClientMessage(playerid,COLOR_GOLD,"Для того чтобы завести двигатель нажмите на клавишу {FFFFFF}[Ctrl]");
 				if(IsAVelik(carid) || IsABike(carid) || IsAMoped(carid))
 				{
 				    if(GetVehicleModel(carid) != 462)
 				    {
-				    	SendClientMessage(playerid,COLOR_GOLD,"Используйте клавишу {FFFFFF}ALT{1578af} чтобы включить фары");
+				    	SendClientMessage(playerid,COLOR_GOLD,"Используйте клавишу {FFFFFF}[Alt]{1578af} чтобы включить фары");
 			    	}
 				}
 				else
 				{
-					SendClientMessage(playerid,COLOR_GOLD,"Используйте клавишу {FFFFFF}ALT{1578af} чтобы включить фары, а клавишу {FFFFFF}N{1578af} чтобы открыть/закрыть окно");
+					SendClientMessage(playerid,COLOR_GOLD,"Используйте клавишу {FFFFFF}[Alt]{1578af} чтобы включить фары, а клавишу {FFFFFF}N{1578af} чтобы открыть/закрыть окно");
 				}
 				SetEngineStatus(carid,false, playerid);
 			}
@@ -21907,7 +21907,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 			}
 		}
 	}
-	if (newkeys & 1) //KEY_FIRE для фар юзать будем alt вроде
+	if (newkeys & 4) //KEY_FIRE для фар юзать будем alt вроде
 	{
 		if(GetPlayerState(playerid) == PLAYER_STATE_DRIVER)
 		{
@@ -22975,7 +22975,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 					}
 				}
 			}
-			if(PRESSED(512)) return cmd_engine(playerid,"");
+			if(PRESSED(1)) return cmd_engine(playerid,"");
 			if(PRESSED(KEY_SUBMISSION))
 			{
 				if(IsACopCar(carid) && IsACop(playerid))
@@ -49765,7 +49765,7 @@ CMD:engine(playerid, params[])
     if(!IsPlayerInAnyVehicle(playerid)) return SendClientMessage(playerid,COLOR_GREY, "Вы должны находится в транспорте");
 	if(GetPlayerState(playerid) != 2) return false;
 	if(pTemp[playerid][Anti_Pvar][13] > CurrentTimer) return false;//SendClientMessage(playerid,COLOR_GREY,"Пожалуйста, не флудите!");
-	PlayerPlaySound(playerid, 4201, 0.0, 0.0, 0.0);
+	PlayerPlaySound(playerid, 17803, 0.0, 0.0, 0.0);
 	new carid = GetPlayerVehicleID(playerid);
 	if(IsAVelik(carid)) return false;
 	if(GetEngineStatus(carid) < 1)
