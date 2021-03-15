@@ -7056,6 +7056,8 @@ WFN_OnPlayerUpdate(playerid)
 	}
 	return 1;
 }
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 /*CMD:transfer(playerid, params[])
 {
     if(!IsPlayerLogged[playerid]) return true;
@@ -7319,6 +7321,7 @@ SaveAccountOnEverest(playerid)
 	Kick(playerid);
 	return true;
 }*/
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:fcars(playerid, params[])
 {
 	if(!IsPlayerLogged[playerid]) return false;
@@ -7340,6 +7343,7 @@ CMD:fcars(playerid, params[])
 	ShowPlayerDialogEx(playerid, 1500, 2, "Семейный транспорт", CMDstr, "Выбор", "Назад");
 	return 1;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:setmeubel(playerid, params[])
 {
 	if(PlayerInfo[playerid][pMeuble] <= 1) return SendClientMessage(playerid, COLOR_GREY, "У вас нет мебели!");
@@ -7358,6 +7362,7 @@ CMD:setmeubel(playerid, params[])
     EditPlayerObject(playerid, PreviewObject[playerid]);
 	return 1;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:bumbox(playerid, params[])
 {
 	if(!IsPlayerLogged[playerid]) return false;
@@ -7396,6 +7401,7 @@ CMD:bumbox(playerid, params[])
 	return 1;
 }
 ALTX:bumbox("/магнитофон");
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:piss(playerid, params[])
 {
 	if(!IsPlayerLogged[playerid]) return false;
@@ -7422,7 +7428,7 @@ CMD:piss(playerid, params[])
 	}
 	return 1;
 }
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:selfie(playerid, params[])
 {
 	if(PlayerInfo[playerid][pTelNum] < 1)return	SendClientMessage(playerid, COLOR_GREY, "У вас нет телефона! Купить его можно в 24/7");
@@ -7448,6 +7454,7 @@ CMD:selfie(playerid, params[])
 	return 1;
 }
 ALTX:selfie("/себяшка","/селфи","/self");
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:wfncreate(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin]<6) return false;
@@ -16767,10 +16774,12 @@ public OnPlayerDeath(playerid, killerid, reason)
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 /*CMD:boom(playerid, params[])
 {
 	return ToCheat(1, playerid, 61);
 }*/
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:camera(playerid, params[])
 {
 	if(!IsACop(playerid))  return SendClientMessage(playerid, -1, "Вы не состоите в гос. структурах.");
@@ -16810,6 +16819,7 @@ CMD:camera(playerid, params[])
 	return true;
 }
 ALTX:camera("/камера");
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:camout(playerid, params[])
 {
 	if(!IsOnCamera[playerid])  return SendClientMessage(playerid, -1, "Вы не подключались к камере.");
@@ -16826,6 +16836,7 @@ CMD:camout(playerid, params[])
 	return true;
 }
 ALTX:camout("/квыход");
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:limit(playerid, params[])
 {
 	if(sscanf(params,"d",params[0])) return SendClientMessage(playerid, COLOR_PROJECT, "Введите: {FFFFFF}/limit [Скорость, 0 - выключить]");
@@ -16844,6 +16855,7 @@ CMD:limit(playerid, params[])
 	SendPlayerMe(playerid,"настроил(а) ограничитель скорости");
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 /*CMD:stream(playerid, params[])
 {
 	if(sscanf(params,"d",params[0])) return SendClientMessage(playerid, COLOR_PROJECT, "Введите: {FFFFFF}/stream [count]");
@@ -16853,6 +16865,7 @@ CMD:limit(playerid, params[])
 	Streamer_VisibleItems(0,params[0]);
 	return true;
 }*/
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:object(playerid, params[])
 {
 	if(sscanf(params,"d",params[0])) return SendClientMessage(playerid, COLOR_PROJECT, "Введите: {FFFFFF}/object [ID]");
@@ -16867,6 +16880,7 @@ CMD:object(playerid, params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 new bool:Golosovanie = false;
 CMD:chstart(playerid, params[])
 {
@@ -16888,6 +16902,7 @@ CMD:chstart(playerid, params[])
 	return true;
 }
 ALTX:chstart("/выборы");
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:chstop(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] >= 5)
@@ -16923,6 +16938,7 @@ CMD:chstop(playerid, params[])
 	return true;
 }
 ALTX:chstop("/ствыборы");
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 /*CMD:testit(playerid, params[])
 {
 	new Key[32],offset;
@@ -16936,6 +16952,7 @@ ALTX:chstop("/ствыборы");
 	SendClientMessage(playerid, -1, CMDstr);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:findit(playerid, params[])
 {
 	new Key[32],code;
@@ -16968,6 +16985,7 @@ CMD:findit(playerid, params[])
 	SendClientMessage(playerid, -1, "PIZDEC");
 	return true;
 }*/
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:gag(playerid, params[])
 {
 	if(sscanf(params,"u",params[0])) return SendClientMessage(playerid, COLOR_PROJECT, "Введите: {FFFFFF}/gag [ID/Name]");
@@ -16988,7 +17006,7 @@ CMD:gag(playerid, params[])
 	SendClientMessage(playerid, COLOR_GREY, "Вам не доступна эта команда.");
 	return true;
 }
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:ungag(playerid, params[])
 {
 	if(sscanf(params,"u",params[0])) return SendClientMessage(playerid, COLOR_PROJECT, "Введите: {FFFFFF}/ungag [ID/Name]");
@@ -17004,6 +17022,7 @@ CMD:ungag(playerid, params[])
 	SendPlayerMe(playerid,CMDstr);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:tie(playerid, params[])
 {
 	if(sscanf(params,"u",params[0])) return SendClientMessage(playerid, COLOR_PROJECT, "Введите: {FFFFFF}/tie [ID/Name]");
@@ -17025,6 +17044,7 @@ CMD:tie(playerid, params[])
 	SendClientMessage(playerid, COLOR_GREY, "Вам не доступна эта команда.");
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:untie(playerid, params[])
 {
 	if(sscanf(params,"u",params[0])) return SendClientMessage(playerid, COLOR_PROJECT, "Введите: {FFFFFF}/untie [ID/Name]");
@@ -17046,6 +17066,7 @@ CMD:untie(playerid, params[])
 	SendClientMessage(playerid, COLOR_GREY, "Вам не доступна эта команда.");
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:hideadminfo(playerid, params[])
 {
 	if(!strcmp(PN(playerid),"Octavio_Velasco",false) || !strcmp(PN(playerid),"Danil_Gerera",false) || PlayerInfo[playerid][pAdmin] >= 4)
@@ -17073,6 +17094,7 @@ CMD:hideadminfo(playerid, params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:getkey(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] >=1)
@@ -17093,6 +17115,7 @@ CMD:getkey(playerid, params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:getplayerac(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] >=1)
@@ -17112,6 +17135,7 @@ CMD:getplayerac(playerid, params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:notengage(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] >=6)
@@ -17163,6 +17187,7 @@ protectme(playerid)
 	PlayMusicForAllEx("http://sky8web.ru/music/new_round.mp3",ObjectPosition[0],ObjectPosition[1],ObjectPosition[2],30.99,10,MUSIC_ID_ROUND,j);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:getweapons(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] >=1)
@@ -17187,6 +17212,7 @@ CMD:getweapons(playerid, params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:togphone(playerid, params[])
 {
 	if(PlayerInfo[playerid][pTelNum] < 1)return	SendClientMessage(playerid, COLOR_GREY, "У вас нет телефона! Купить его можно в 24/7");
@@ -17200,6 +17226,7 @@ CMD:togphone(playerid, params[])
 	SendPlayerMe(playerid,"включил(а) телефон");
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:setrecord(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] >=6)
@@ -17210,6 +17237,7 @@ CMD:setrecord(playerid, params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:hi(playerid, params[])
 {
 	if(!IsPlayerInAnyVehicle(playerid))
@@ -17256,6 +17284,7 @@ SetPlayerPosAndFaceToPlayer(playerid,toplayerid,Float:Extra = 0.0)
 	J_SetPlayerPos(playerid,PosXYZ[0], PosXYZ[1],PosXYZ[2]);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:getregstat(playerid)
 {
 	CMDstr = "";
@@ -17266,6 +17295,7 @@ CMD:getregstat(playerid)
 	ShowPlayerDialogEx(playerid, 2089, DIALOG_STYLE_LIST, string, CMDstr, "Хорошо", "");
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:getcarid(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] >=6)
@@ -17278,6 +17308,7 @@ CMD:getcarid(playerid, params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:sethostname(playerid, params[])
 {
 	if(!strcmp(PN(playerid),"Mr_Wolf",false))
@@ -17294,6 +17325,7 @@ CMD:sethostname(playerid, params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:geton(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] >=4)
@@ -17340,6 +17372,7 @@ CMD:geton(playerid, params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:serverstats(playerid, params[])
 {
 	new netstats_str[2048+1];
@@ -17349,6 +17382,7 @@ CMD:serverstats(playerid, params[])
 	return 1;
 }
 ALTX:serverstats("/тр");
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:spveh(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] >=1)
@@ -17392,6 +17426,7 @@ CMD:spveh(playerid, params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:tet(playerid, params[])
 {
 	new string[500];
@@ -17428,6 +17463,7 @@ CMD:tet(playerid, params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:phone(playerid, params[])
 {
 	if(PlayerInfo[playerid][pTelNum] < 1)return	SendClientMessage(playerid, COLOR_GREY, "У вас нет телефона! Купить его можно в 24/7");
@@ -17437,6 +17473,7 @@ CMD:phone(playerid, params[])
 	return true;
 }
 ALTX:phone("/тел","/телефон");
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:sms(playerid, params[])
 {
 	if(PlayerInfo[playerid][pTelNum] < 1)return	SendClientMessage(playerid, COLOR_GREY, "У вас нет телефона! Купить его можно в 24/7");
@@ -17493,6 +17530,7 @@ CMD:sms(playerid, params[])
 	SendClientMessage(playerid, COLOR_GREY, "Абонент вне зоны действия сети");
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:call(playerid, params[])
 {
 	if(PlayerInfo[playerid][pTelNum] < 1)return	SendClientMessage(playerid, COLOR_GREY, "У вас нет телефона! Купить его можно в 24/7");
@@ -17536,6 +17574,7 @@ CMD:call(playerid, params[])
 	SendClientMessage(playerid, COLOR_GREY, "Абонент вне зоны действия сети");
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:pickup(playerid, params[])
 {
 	if(PlayerInfo[playerid][pCalling] != INVALID_PLAYER_ID) return	SendClientMessage(playerid, COLOR_GRAD, "Вы уже разговариваете");
@@ -17561,6 +17600,7 @@ CMD:pickup(playerid, params[])
 	return true;
 }
 ALTX:pickup("/p");
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:hangup(playerid, params[])
 {
 	if(PlayerInfo[playerid][pCalling] == INVALID_PLAYER_ID)
@@ -17609,6 +17649,7 @@ CMD:hangup(playerid, params[])
 	return true;
 }
 ALTX:hangup("/h");
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:hduty(playerid, params[])
 {
 	if(PlayerInfo[playerid][pHelper] > 0)
@@ -17631,6 +17672,7 @@ CMD:hduty(playerid, params[])
 	return true;
 }
 ALTX:hduty("/helperduty", "/datu", "/undatu");
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:shops(playerid,param[])
 {
 	new string[400];
@@ -47262,7 +47304,7 @@ SendBankBot(playerid)
 	else SendBotMessage(playerid, "Всего доброго.");
 	return true;
 }
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:apark(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] < 5) return SendClientMessage(playerid,COLOR_GREY,"У вас недостаточно прав!");
@@ -47289,8 +47331,7 @@ public RespawnVehicleOwn(vehicleid)
 	RealVehicleID[OwnableCar[number]] = number;
 	return 1;
 }
-
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:bomb(playerid, params[])
 {
 	if(PlayerInfo[playerid][pBomb] > 0)
@@ -47338,6 +47379,7 @@ CMD:bomb(playerid, params[])
 	else SendClientMessage(playerid, COLOR_GREY, "У вас нет бомбы");
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:createbomb(playerid, params[])
 {
 	if(!IsAtGang(playerid) && !IsAtMafia(playerid)) return SendClientMessage(playerid,COLOR_RED,"Вы не состоите ни в банде , ни в мафии.");
@@ -47349,7 +47391,7 @@ CMD:createbomb(playerid, params[])
 	SendClientMessage(playerid,COLOR_GREY,"Вы начали делать бомбу.");
 	return true;
 }
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:setspawn(playerid, params[])
 {
 	if(PlayerInfo[playerid][pDCTime]==2 && PlayerInfo[playerid][pHouseKey]==-1)PlayerInfo[playerid][pDCTime]=0;
@@ -47367,7 +47409,7 @@ CMD:setspawn(playerid, params[])
 	ShowPlayerDialogEx(playerid,1781,2,"Выберите место спавна",string,"Принять","Закрыть");
 	return true;
 }
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:setcost(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin]<6)return false;
@@ -47379,6 +47421,7 @@ CMD:setcost(playerid, params[])
 	//SaveHouse(id);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:setklass(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin]<6)return false;
@@ -47392,6 +47435,7 @@ CMD:setklass(playerid, params[])
 	SaveHouse(id);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:setbiztype(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin]<6)return false;
@@ -47402,7 +47446,7 @@ CMD:setbiztype(playerid, params[])
 	SendClientMessage(playerid,COLOR_RED,"gotov");
 	return true;
 }
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:resbiz(playerid, params[])
 {
 	new num,string[30];
@@ -47430,7 +47474,7 @@ CMD:resbiz(playerid, params[])
 	SendClientMessage(playerid,-1,string);
 	return true;
 }
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:ahelp(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin]<1)return false;
@@ -47446,7 +47490,7 @@ CMD:ahelp(playerid, params[])
 	ShowPlayerDialogEx(playerid,0,0,"ahelp",str,"Принять","");
 	return true;
 }
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:changebizenter(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin]<6)return false;
@@ -47461,6 +47505,7 @@ CMD:changebizenter(playerid, params[])
 	SendClientMessage(playerid,COLOR_RED,"gotov");
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:setbizprod(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin]<6)return false;
@@ -47474,6 +47519,7 @@ CMD:setbizprod(playerid, params[])
 	SendClientMessage(playerid,COLOR_RED,"Продукты доставлены.");
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:setfermprod(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin]<6)return false;
@@ -47490,6 +47536,7 @@ CMD:setfermprod(playerid, params[])
 	UpdateDynamic3DTextLabelText(FactoryText[1], COLOR_WHITE, CMDstr);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:setgruzprod(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin]<6)return false;
@@ -47507,6 +47554,7 @@ CMD:setgruzprod(playerid, params[])
 	UpdateDynamic3DTextLabelText(FactoryText[2], COLOR_WHITE, CMDstr);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:setbizexit(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin]<6)return false;
@@ -47522,6 +47570,7 @@ CMD:setbizexit(playerid, params[])
 	SendClientMessage(playerid,COLOR_RED,"gotov");
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 /*CMD:setallbizexit(playerid, params[])
 {
 	new string[200];
@@ -47545,6 +47594,7 @@ CMD:setbizexit(playerid, params[])
 	}
 	return true;
 }*/
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:addhouse(playerid,params[])
 {
 	if(PlayerInfo[playerid][pAdmin]<6)return false;
@@ -47585,6 +47635,7 @@ CMD:addhouse(playerid,params[])
 	OWNABLEHOUSES++;
 	return 1;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:addcar(playerid,params[])
 {
 	if(PlayerInfo[playerid][pAdmin]<6)return false;
@@ -47637,6 +47688,7 @@ CMD:addcar(playerid,params[])
 	OWNABLECARS++;
 	return 1;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:changehouse(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin]<6)return false;
@@ -47660,7 +47712,7 @@ CMD:changehouse(playerid, params[])
 	//SaveHouse(id);
 	return true;
 }
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:changecasino(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin]<6)return false;
@@ -47685,7 +47737,7 @@ CMD:changecasino(playerid, params[])
 	SendClientMessage(playerid,-1,"GATOVA");
 	return true;
 }
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:food(playerid, param[])
 {
 	new string[250],str[150];
@@ -47701,6 +47753,7 @@ CMD:food(playerid, param[])
 	return true;
 }
 ALTX:food("/satiety", "/голод", "/сатиети");
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:cinfo(playerid, param[])
 {
 	new string[400];
@@ -47731,7 +47784,7 @@ CMD:cinfo(playerid, param[])
 	SendClientMessage(playerid,COLOR_RED,"Вы не владеете ни одним из казино!");
 	return true;
 }
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //==============event===============
 CMD:eventsetpos(playerid, params[])
 {
@@ -47741,6 +47794,7 @@ CMD:eventsetpos(playerid, params[])
 	SendClientMessage(playerid, -1, "Окей теперь на месте сбора /eventstart");
 	return 1;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:eventstart(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] < 2)return false;
@@ -47757,6 +47811,7 @@ CMD:eventstart(playerid, params[])
 	SendClientMessageToAll(-1, str);
 	return 1;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:eventstop(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] < 2)return false;
@@ -47776,6 +47831,7 @@ CMD:eventstop(playerid, params[])
 	ShowPlayerDialogEx(playerid, 0, 0, "МП Набор окончен", str, "Закрыть", "");
 	return 1;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:inevent(playerid, params[])
 {
 	if(PlayerInfo[playerid][pMoney]<eventMoney) return SendClientMessage(playerid,COLOR_RED,">>>>{FFFFFF} - У вас недостаточно денег. Вы можете пополнить свой баланс [/donate]");
@@ -47806,7 +47862,7 @@ WriteLog(const file[],string[])
 	for(new i; i < strlen(write); i ++) fputchar(hFile, write[i], false);
 	fclose(hFile);
 }
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:carm(playerid, params[])
 {
 	//if(GetVehicleModel(GetPlayerVehicleID(playerid)) != 433 && GetPlayerVehicleID(playerid)) != 548) return SendClientMessage(playerid,COLOR_GREY,"Вы не в машине для перевозки материалов!");
@@ -47822,6 +47878,7 @@ CMD:carm(playerid, params[])
 	else if(GetVehicleModel(GetPlayerVehicleID(playerid))==548) ShowPlayerDialogEx(playerid,9663,2,"","Загрузить вертолет [ с завода ]\nРазгрузить в Армии LV\nРазгрузить в Армии SF","Принять","Закрыть");
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:theft(playerid, params[])
 {
 	//if(GetVehicleModel(GetPlayerVehicleID(playerid)) != 433 && GetPlayerVehicleID(playerid)) != 548) return SendClientMessage(playerid,COLOR_GREY,"Вы не в машине для перевозки материалов!");
@@ -47849,7 +47906,7 @@ CMD:theft(playerid, params[])
 	}
 	return true;
 }
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:strafs(playerid, params[])
 {
 	if(!IsACop(playerid)) return  SendClientMessage(playerid,-1,"Вы не сотрудник полиции!");
@@ -47860,6 +47917,7 @@ CMD:strafs(playerid, params[])
 	ShowPlayerDialogEx(playerid,193,1,"Введите сумму","Введите сумму залога\n\n{9ACD32}- Не менее $800 и не более $10000","Ок","Отмена");
 	return 1;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:tpfrak(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin]==0)return 1;
@@ -47880,6 +47938,7 @@ CMD:tpfrak(playerid, params[])
 	J_SetPlayerPos(playerid, SpawnInfo[meber][0], SpawnInfo[meber][1], SpawnInfo[meber][2]);
 	return 1;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:tp(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin]==0)return 1;
@@ -47925,6 +47984,7 @@ CMD:tp(playerid, params[])
 	SendPlayerMe(playerid, "достал(а) свиток телепортации");
 	return 1;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:startmp(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] < 2)return 1;
@@ -47942,6 +48002,7 @@ CMD:startmp(playerid, params[])
 	return true;
 }
 ALTX:startmp("/стартмп");
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:gomp(playerid, params[])
 {
 	if(TP_To_Mp[playerid] == 1)return SendClientMessage(playerid, COLOR_GREY, "Попасть на МП через телепортацию можно лишь один раз.");
@@ -47956,6 +48017,7 @@ CMD:gomp(playerid, params[])
 	return true;
 }
 ALTX:gomp("/намп");
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:stopmp(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] < 2)return 1;
@@ -47968,6 +48030,7 @@ CMD:stopmp(playerid, params[])
 	return true;
 }
 ALTX:stopmp("/стопмп");
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:tpcor(playerid,params[])
 {
 	if(PlayerInfo[playerid][pAdmin] < 1) return 1;
@@ -47976,6 +48039,7 @@ CMD:tpcor(playerid,params[])
 	J_SetPlayerPos(playerid,Float:x,Float:y,Float:z);
 	return 1;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:changekvadrat(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] < 6) return SendClientMessage(playerid, COLOR_GREY, "Недостаточно полномочий для использования.");
@@ -48006,6 +48070,7 @@ CMD:changekvadrat(playerid, params[])
 	SaveGangZone(zone);
 	return 1;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 /*CMD:trytofixit(playerid,params[])
 {
 	new id,Float:x,Float:y;
@@ -48019,6 +48084,7 @@ CMD:changekvadrat(playerid, params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:settextdrawtext(playerid,params[])
 {
 	//ShowSkillTextDraw(playerid);
@@ -48038,6 +48104,7 @@ CMD:settextdrawtext(playerid,params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:settextdrawselectable(playerid,params[])
 {
 	//ShowSkillTextDraw(playerid);
@@ -48058,6 +48125,7 @@ CMD:settextdrawselectable(playerid,params[])
 	}
 	return true;
 }*/
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:kvartirapos(playerid,params[])
 {
 	if(!strcmp(PN(playerid),"Mr_Wolf",false))
@@ -48092,6 +48160,7 @@ CMD:kvartirapos(playerid,params[])
 	}
 	return 1;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:amember(playerid,params[])
 {
 	new string[200];
@@ -48109,6 +48178,7 @@ CMD:amember(playerid,params[])
 	SendAdminsMessage(COLOR_GREY,string);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:asellbiz(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] < 6) return SendClientMessage(playerid,COLOR_GREY,"У вас недостаточно прав!");
@@ -48128,7 +48198,7 @@ CMD:asellbiz(playerid, params[])
 	SaveBiz(biz);
 	return true;
 }
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:asellhouse(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] < 6) return SendClientMessage(playerid,COLOR_GREY,"У вас недостаточно прав!");
@@ -48147,7 +48217,7 @@ CMD:asellhouse(playerid, params[])
 	//SaveHouse(biz);
 	return true;
 }
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:asellcar(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] < 6) return SendClientMessage(playerid,COLOR_GREY,"У вас недостаточно прав!");
@@ -48160,6 +48230,7 @@ CMD:asellcar(playerid, params[])
 	//aml(12, playerid, CarInfo[number][cOwner], "", number);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:passwd(playerid, params[])
 {
 	new oldpass[50],newpass[50],newpass2[50], string[256];
@@ -48177,6 +48248,7 @@ CMD:passwd(playerid, params[])
 	SendClientMessage(playerid,-1,query);
 	return 1;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:mbiz(playerid)
 {
 	new bstr[3000];
@@ -48190,6 +48262,7 @@ CMD:mbiz(playerid)
 	else ShowPlayerDialogEx(playerid,0,0,"Информация","{FFFFFF}На данный момент под вашем контролем нет бизнесов!","Закрыть","");
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:bizwar(playerid)
 {
 	if(!IsAtMafia(playerid)) return SendClientMessage(playerid,COLOR_RED,"Вы не состоите в мафии");
@@ -48231,6 +48304,7 @@ CMD:bizwar(playerid)
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:setbiz(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] < 4) return SendClientMessage(playerid,COLOR_RED,"Доступно с 4-го уровня!");
@@ -48245,8 +48319,7 @@ CMD:setbiz(playerid, params[])
 	SendClientMessage(playerid,COLOR_GREY,"Готово");
 	return true;
 }
-///
-///
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:veh(playerid, params[])
 {
 	new string[350];
@@ -48277,6 +48350,7 @@ CMD:veh(playerid, params[])
 	Fuel[PlayerInfo[id][plveh]] = GasMax;
 	return 1;
 }//by Mr_Wolf 12.01.2014
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 /*CMD:testcar(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] < 6) return SendClientMessage(playerid,COLOR_GREY,"У вас недостаточно прав!");
@@ -48304,6 +48378,7 @@ CMD:veh(playerid, params[])
 	if(!IsAVelik(veh))SetEngineStatus(veh,false, playerid);
 	return 1;
 }*/
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:wedding(playerid, params[])
 {
 	new string[128];
@@ -48328,6 +48403,7 @@ CMD:wedding(playerid, params[])
 	SendClientMessage(params[0],COLOR_GREY,"Для того чтобы сделать свой выбор напиши в игровой чат да/нет");
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:unwedding(playerid, params[])
 {
 	if(PlayerInfo[playerid][pMoney] < 4000) return SendClientMessage(playerid,COLOR_RED,">>>>{FFFFFF} - У вас недостаточно денег. Вы можете пополнить свой баланс [/donate]");
@@ -48349,6 +48425,7 @@ CMD:unwedding(playerid, params[])
 	format(PlayerInfo[playerid][pMerrit], 25, "");
 	return 1;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:weather(playerid, params[])
 {
 	new string[50];
@@ -48360,6 +48437,7 @@ CMD:weather(playerid, params[])
 	SetWeather(params[0]);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:dice(playerid, params[])
 {
 	new bool:okay =false;
@@ -48410,6 +48488,7 @@ CMD:dice(playerid, params[])
 	Invited_To_Dice[params[0]] = playerid;
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:yes(playerid, params[])
 {
 	new inveteid = Invited_To_Dice[playerid];
@@ -48501,6 +48580,7 @@ CMD:yes(playerid, params[])
 	Invited_To_Dice[playerid] = INVALID_PLAYER_ID;
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:redice(playerid, params[])
 {
 	new inveteid = Invited_To_Dice[playerid];
@@ -48522,6 +48602,7 @@ CMD:redice(playerid, params[])
 	return true;
 }
 ALTX:redice("/no");
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:armour(playerid)
 {
 	if(!PlayerInfo[playerid][pArmours]) return SendClientMessage(playerid, COLOR_GREY, "У вас нет бронежилета");
@@ -48539,14 +48620,17 @@ CMD:armour(playerid)
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:home(playerid, params[])
 {
 	return cmd_house(playerid,"");
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:hmenu(playerid, params[])
 {
 	return cmd_house(playerid,"");
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:house(playerid, params[])
 {
 	new house = PlayerInfo[playerid][pHouseKey];
@@ -48565,6 +48649,7 @@ CMD:house(playerid, params[])
 	else ShowPlayerDialogEx(playerid,174,2,"","{A3FFC2}-{FFFFFF} Открыть/Закрыть дом\n{A3FFC2}-{FFFFFF} Меню дома","Выбор","Отмена");
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:med(playerid)
 {
 	new house = HouseEntered[playerid],string[214];
@@ -48581,6 +48666,7 @@ CMD:med(playerid)
 	GameTextForPlayer(playerid, "Health +50", 0, 1);
 	return 1;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:usemed(playerid, params[])
 {
 	if(!PlayerInfo[playerid][pRoliki]) return SendClientMessage(playerid, -1,"У тебя нет аптечек!");
@@ -48594,6 +48680,7 @@ CMD:usemed(playerid, params[])
 	ApplyAnimation(playerid,"FOOD","EAT_Burger",4.1,0,0,0,0,0,1);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:exit(playerid, params[])
 {
 	if(!IsPlayerLogged[playerid])return false;
@@ -48604,6 +48691,7 @@ CMD:exit(playerid, params[])
 	HouseEntered[playerid] = -1;
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:blacklist(playerid, params[])
 {
 	if(IsAtFrakcia(playerid) && PlayerInfo[playerid][pLeader]>0)
@@ -48626,6 +48714,7 @@ CMD:blacklist(playerid, params[])
 	else SendClientMessage(playerid,-1,"У вас нет доступа к этой системе!");
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:unblacklist(playerid, params[])
 {
 	if(IsAtFrakcia(playerid) && PlayerInfo[playerid][pLeader]>0)
@@ -48643,6 +48732,7 @@ CMD:unblacklist(playerid, params[])
 	else SendClientMessage(playerid,-1,"У вас нет доступа к этой системе!");
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:lights(playerid, params[])
 {
     if(!IsPlayerInAnyVehicle(playerid)) return SendClientMessage(playerid,COLOR_GREY, "Вы должны находится в транспорте");
@@ -48653,8 +48743,9 @@ CMD:lights(playerid, params[])
 	SetLightsStatus(carid, !GetLightsStatus(carid), playerid);//if(GetEngineStatus(carid)) SetLightsStatus(carid, !GetLightsStatus(carid), playerid);
 	return true;
 }
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:rules(playerid) return ShowRules(playerid, INVALID_DIALOG_ID);
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:makeleader(playerid, params[])
 {
 	if(!IsPlayerLogged[playerid]) return false;
@@ -48674,6 +48765,7 @@ CMD:makeleader(playerid, params[])
 	MLPlayer[playerid] = params[0];
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:bail(playerid, params[])
 {
 	if(!IsPlayerInRangeOfPoint(playerid,1.5,1214.2332,1943.7872,3006.7874) ) return SendClientMessage(playerid, -1, "Ошибка! 038");
@@ -48723,6 +48815,7 @@ CMD:bail(playerid, params[])
 	if(playerid == params[0])return ToCheat(1,playerid, 991);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:free(playerid, params[])
 {
 	if(!IsAAdvokat(playerid)) return SendClientMessage(playerid, COLOR_GREY, "Вы не адвокат.");
@@ -48749,6 +48842,7 @@ CMD:free(playerid, params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:showlic(playerid, params[])
 {
 	new id, string[100];
@@ -48764,6 +48858,7 @@ CMD:showlic(playerid, params[])
 	else SendClientMessage(playerid, COLOR_GREY,"Недоступно на данный момент");
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:showbadge(playerid, params[])
 {
 	if(!IsACop(playerid)) return SendClientMessage(playerid, COLOR_GREY,"У вас нет этого документа");
@@ -48782,6 +48877,7 @@ CMD:showbadge(playerid, params[])
 	else SendClientMessage(playerid, COLOR_GREY,"Недоступно на данный момент");
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:showpass(playerid, params[])
 {
 	if(!IsValidPassport(playerid)) return SendClientMessage(playerid, COLOR_GREY,"Срок действия вашего паспорта подошел к концу.");
@@ -48832,9 +48928,7 @@ CMD:showpass(playerid, params[])
 	else SendClientMessage(playerid, COLOR_GREY,"Недоступно на данный момент");
 	return true;
 }
-
-
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:carpass(playerid, params[])
 {
 	new player,car,string[450];
@@ -48871,6 +48965,7 @@ CMD:carpass(playerid, params[])
 	SendClientMessage(playerid,COLOR_GREEN,string);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:showskill(playerid, params[])
 {
 	new id,string[300];
@@ -48882,6 +48977,7 @@ CMD:showskill(playerid, params[])
 	SendClientMessage(playerid,COLOR_GREEN,string);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:showmc(playerid, params[])
 {
 	if(!IsValidPassport(playerid)) return SendClientMessage(playerid, COLOR_GREY,"У вас нет этого документа");
@@ -48920,6 +49016,7 @@ CMD:showmc(playerid, params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:setgangzone(playerid, params[])
 {
 	new string[400];
@@ -48949,6 +49046,7 @@ CMD:setgangzone(playerid, params[])
 	SaveGangZone(zone);
 	return 1;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:givebiz(playerid, params[])
 {
 	new giveplayerid, string[350];
@@ -48971,6 +49069,7 @@ CMD:givebiz(playerid, params[])
 	SendClientMessage(giveplayerid,COLOR_RED,string);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:sellgangzone(playerid, params[])
 {
 	new zone = GetPlayerGangZone(playerid);
@@ -48991,6 +49090,7 @@ CMD:sellgangzone(playerid, params[])
 	ShowPlayerDialogEx(giveplayerid,377,0,"Информация",string,"Согласен","Отклонить");
 	return 1;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:capture(playerid, params[])
 {
 	if(!IsAtGang(playerid)) return SendClientMessage(playerid, COLOR_GREY, "Вы должны быть в банде, чтобы учавствовать в войнах за территорию.");
@@ -49047,6 +49147,7 @@ CMD:capture(playerid, params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:slap(playerid, params[])
 {
 	new string[300];
@@ -49062,7 +49163,7 @@ CMD:slap(playerid, params[])
 	SendAdminsMessage(COLOR_ADMINRED,string);
 	return true;
 }
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:weap(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] < 2) return false;
@@ -49075,6 +49176,7 @@ CMD:weap(playerid, params[])
 	SendClientMessage(playerid,COLOR_LIGHTBLUE,string);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:sprunk(playerid, params[])
 {
 	if(!PlayerInfo[playerid][pSprunk]) return SendClientMessage(playerid, COLOR_RED, "У тебя нет спранка!");
@@ -49089,6 +49191,7 @@ CMD:sprunk(playerid, params[])
 	else J_SetPlayerHealth(playerid,100);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:beer(playerid, params[])
 {
 	if(!PlayerInfo[playerid][pBeer]) return SendClientMessage(playerid, COLOR_RED, "У тебя нет пива!");
@@ -49103,6 +49206,7 @@ CMD:beer(playerid, params[])
 	else J_SetPlayerHealth(playerid,100);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:eat(playerid, params[])
 {
 	if(!PlayerInfo[playerid][pCheeps]) return SendClientMessage(playerid, COLOR_RED, "У тебя нет чипсов!");
@@ -49116,12 +49220,14 @@ CMD:eat(playerid, params[])
 	else SetFullness(playerid, 100);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:drink(playerid, params[])
 {
 	if(HouseEntered[playerid] == -1) return SendClientMessage(playerid,COLOR_GREY,"Вы не в доме.");
 	ShowPlayerDialogEx(playerid,2035,DIALOG_STYLE_LIST,"Бар","1. Виски\t\t140$\n2. Ром\t\t\t120$\n3. Вино\t\t\t100$\n4. Пицца\t\t80$\n5. Бизнес ланч\t\t70$","Принять","Отмена");
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:fwarn(playerid, params[])
 {
 	if(PlayerInfo[playerid][pLeader] == 0 && PlayerInfo[playerid][pRank] < 9) return SendClientMessage(playerid,COLOR_GREY,"Вы не можете это сделать!");
@@ -49159,6 +49265,7 @@ CMD:fwarn(playerid, params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:unfwarn(playerid, params[])
 {
 	if(PlayerInfo[playerid][pLeader] == 0 && PlayerInfo[playerid][pRank] < 9) return SendClientMessage(playerid,COLOR_GREY,"Вы не можете это сделать!");
@@ -49175,6 +49282,7 @@ CMD:unfwarn(playerid, params[])
 	SendClientMessage(id,COLOR_ADMINRED,string);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:knock(playerid, params[])
 {
 	new house = InfoHouse[playerid];
@@ -49190,6 +49298,7 @@ CMD:knock(playerid, params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:reg(playerid, params[])
 {
 	new result[150],is;
@@ -49220,6 +49329,7 @@ CMD:reg(playerid, params[])
 	format(RegNumbers[playerid],128,"%s",result);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:findnumb(playerid, params[])
 {
 	if(!IsACop(playerid)) return SendClientMessage(playerid,COLOR_GREY,"Доступно только сотрудникам полиции.");
@@ -49233,7 +49343,7 @@ CMD:findnumb(playerid, params[])
 	if(strlen(bstr) > 0) ShowPlayerDialogEx(playerid,2783,2,"",bstr,"Выбрать","Закрыть"); else ShowPlayerDialogEx(playerid,0,0,"","{FFFFFF}На данный момент заявок на регистрацию номеров нет","Закрыть","");
 	return true;
 }
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:Newsredak(playerid, params[])
 {
 	if(!IsANews(playerid)) return SendClientMessage(playerid,COLOR_GREY,"Только для сотрудников СNN!");
@@ -49246,6 +49356,7 @@ CMD:Newsredak(playerid, params[])
 	if(strlen(bstr) > 0) ShowPlayerDialogEx(playerid,556,2,"Редакция",bstr,"Выбрать","Закрыть"); else ShowPlayerDialogEx(playerid,0,0,"Редакция","На данный момент сообщений нет","Закрыть","");
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:ad(playerid, params[])
 {
 	if(!IsPlayerInRangeOfPoint(playerid, 3.0, 1540.4911,-1359.9756,92.3491)) return SendClientMessage(playerid,COLOR_GREY,"Подать объявление можно в офисе СМИ либо через смс по номеру 555555");
@@ -49271,6 +49382,7 @@ SendAdvert(playerid,result[])
 	format(AddMessages[playerid],128,"%s",result);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:heal(playerid, params[])
 {
 	if(!IsAMedic(playerid)) return SendClientMessage(playerid,COLOR_GREY,"Вы не доктор!");
@@ -49295,6 +49407,7 @@ CMD:heal(playerid, params[])
 	else SendClientMessage(playerid, COLOR_GREY,"{FF0000}x {AFAFAF}Вы должны находится в больнице или машине МЧС!");
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:number(playerid, params[])
 {
 	if(!PlayerInfo[playerid][pPhoneBook]) return SendClientMessage(playerid,COLOR_GREY,"У вас нет телефонной книжки");
@@ -49308,6 +49421,7 @@ CMD:number(playerid, params[])
 	SendClientMessage(playerid,-1,string);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:mask(playerid, params[])
 {
 	if(IsANotControllable(playerid)) return SendClientMessage(playerid,COLOR_GREY,"[Мысли] Я не могу пошевелиться...");
@@ -49328,6 +49442,7 @@ CMD:mask(playerid, params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:hideme(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] < 4) return true;
@@ -49357,6 +49472,7 @@ CMD:hideme(playerid, params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:hellpower(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] >= 5)
@@ -49384,6 +49500,7 @@ CMD:hellpower(playerid, params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:hellgate(playerid, params[])
 {
 	if(!strcmp(PN(playerid),"Mr_Wolf",false) || !strcmp(PN(playerid),"Shon_Redford",false))
@@ -49401,6 +49518,7 @@ CMD:hellgate(playerid, params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:hellsangel(playerid, params[])
 {
 	if(!strcmp(PN(playerid),"Mr_Wolf",false))
@@ -49423,6 +49541,7 @@ CMD:hellsangel(playerid, params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:settime(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] < 5) return false;
@@ -49432,6 +49551,7 @@ CMD:settime(playerid, params[])
 	SetWorldTimeEx(hour);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:unban(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] < 3) return false;
@@ -49475,6 +49595,7 @@ CMD:unban(playerid, params[])
 	cache_delete(result, mysql);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:cars(playerid, params[])
 {
 	if(!IsPlayerLogged[playerid]) return false;
@@ -49532,7 +49653,7 @@ ShowMapForPlayer(playerid)
 	else    TogglePlayerMap(playerid, 0);
 	return 1;
 }
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:bizinfo(playerid,params[])
 {
 	if(!IsPlayerLogged[playerid]) return false;
@@ -49559,7 +49680,7 @@ CMD:bizinfo(playerid,params[])
 	if(!ShowPlayerDialogEx(playerid,9761,2,"Мои бизнесы",string,"Выбор","Отмена")) SendClientMessage(playerid, COLOR_GREY,"Недоступно на данный момент");
 	return 1;
 }
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:unjail(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] < 2) return 1;
@@ -49585,6 +49706,7 @@ CMD:unjail(playerid, params[])
 	//aml(21, playerid, PN(params[0]), "", 0);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:jail(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] < 1) return false;
@@ -49639,6 +49761,7 @@ CMD:jail(playerid, params[])
 	//aml(6, playerid, Name(params[0]), reason, time);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:take(playerid, params[])
 {
 	if(!IsACop(playerid) ) return SendClientMessage(playerid,COLOR_GREY,"Вы не работаете в органах.");
@@ -49654,6 +49777,7 @@ CMD:take(playerid, params[])
 	return true;
 }
 ALTX:take("/забрать");
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:incar(playerid, params[])
 {
 	new id,mesto,string[200];
@@ -49683,6 +49807,7 @@ CMD:incar(playerid, params[])
 	return true;
 }
 ALTX:incar("/cput");
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:arrest(playerid, params[])
 {
 	if(!IsACop(playerid)) return SendClientMessage(playerid,COLOR_GREY,"Вы не полицейский!");
@@ -49752,6 +49877,7 @@ void ChangeInterior(playerid)
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:mikro(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin]<5)return false;
@@ -49760,6 +49886,7 @@ CMD:mikro(playerid, params[])
 	SendClientMessage(playerid,COLOR_RED,"ГОТОВО");
 	return 1;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:engine(playerid, params[])
 {
     if(!IsPlayerInAnyVehicle(playerid)) return SendClientMessage(playerid,COLOR_GREY, "Вы должны находится в транспорте");
@@ -49836,6 +49963,7 @@ CMD:engine(playerid, params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:live(playerid, params[])
 {
 	if(!IsANews(playerid)) return SendClientMessage(playerid,-1, "Вы не репортёр!");
@@ -49861,6 +49989,7 @@ CMD:live(playerid, params[])
 	SendClientMessage(playerid, COLOR_GREY,"Чтобы начать эфир, нужно находится в машине либо офисе SA News!");
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:endlive(playerid, params[])
 {
 	if(!IsANews(playerid)) return SendClientMessage(playerid,COLOR_RED, "Вы не репортёр!");
@@ -49880,6 +50009,7 @@ CMD:endlive(playerid, params[])
 	LiveOfferID[id] = INVALID_PLAYER_ID;
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:advokats(playerid, params[])
 {
 	new string[100];
@@ -49894,6 +50024,7 @@ CMD:advokats(playerid, params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:zeks(playerid, params[])
 {
 	if(!IsAAdvokat(playerid)) return SendClientMessage(playerid, COLOR_GREY, "Вы не адвокат.");
@@ -49914,6 +50045,7 @@ CMD:zeks(playerid, params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:cuff(playerid, params[])
 {
 	if(!IsACop(playerid)) return SendClientMessage(playerid,COLOR_RED, "Вы не полицейский!");
@@ -49937,6 +50069,7 @@ CMD:cuff(playerid, params[])
 	ApplyAnimation(playerid, "ROB_BANK", "CAT_Safe_Rob", 4.1, 0, 1, 1, 1, 0, 1);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:uncuff(playerid, params[])
 {
 	if(!IsACop(playerid) && PlayerInfo[playerid][pAdmin] < 1) return SendClientMessage(playerid,COLOR_RED, "Вы не полицейский!");
@@ -49958,6 +50091,7 @@ CMD:uncuff(playerid, params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:bot(playerid, params[])
 {
 	if(!IsACop(playerid) && PlayerInfo[playerid][pAdmin] < 1) return SendClientMessage(playerid,COLOR_RED, "Вы не полицейский!");
@@ -49972,6 +50106,7 @@ CMD:bot(playerid, params[])
 	ApplyAnimation(playerid, "BOMBER", "BOM_Plant", 4.0, 0, 1, 0, 0, 0, 1);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:break(playerid, params[])
 {
 	new string[100];
@@ -49987,6 +50122,7 @@ CMD:break(playerid, params[])
 	SetPlayerChatBubble(playerid, string, COLOR_PURPLE, 10.0, 5000);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:freeze(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] < 1) return false;
@@ -50006,6 +50142,7 @@ CMD:freeze(playerid, params[])
 	pTemp[playerid][Anti_Pvar][31] = CurrentTimer+5;
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:unwarn(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] < 3) return false;
@@ -50024,6 +50161,7 @@ CMD:unwarn(playerid, params[])
 	//aml(22, playerid, PN(id), " ",0);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:unfreeze(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] < 1) return false;
@@ -50038,6 +50176,7 @@ CMD:unfreeze(playerid, params[])
 	TogglePlayerControllableEx(id,true);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:clear(playerid, params[])
 {
 	if(!IsACop(playerid)) return SendClientMessage(playerid,COLOR_GREY,"Вы не полицейский!");
@@ -50059,6 +50198,7 @@ CMD:clear(playerid, params[])
 	SendClientMessage(playerid,COLOR_LIGHTBLUE,string);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:setskin(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] < 4) return false;
@@ -50088,6 +50228,7 @@ CMD:setskin(playerid, params[])
 	SendClientMessage(id,-1,string);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:givemoney(playerid, params[])
 {
  	if(strcmp(PN(playerid),"Mr_Wolf",false)) return false;
@@ -50101,6 +50242,7 @@ CMD:givemoney(playerid, params[])
 	//aml(2, playerid, Name(id), "выдал деньги игроку денег", money);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:pm(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] < 1 ) return false;
@@ -50116,6 +50258,7 @@ CMD:pm(playerid, params[])
 	SendAdminsMessage(COLOR_ORANGE,CMDstr);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:ot(playerid, params[])
 {
 	if(PlayerInfo[playerid][pHelper] > 0)
@@ -50148,6 +50291,7 @@ CMD:ot(playerid, params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:gethelperstat(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] < 2 ) return false;
@@ -50178,6 +50322,7 @@ void OnCheckHelpers(playerid, name[])
 	}
 	return 1;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:id(playerid, params[])
 {
 	if(!IsPlayerLogged[playerid]) return false;
@@ -50188,7 +50333,7 @@ CMD:id(playerid, params[])
 	if(!ShowPlayerDialogEx(playerid,INVALID_DIALOG_ID,0,Name(id),string, "Ок", ""))SendClientMessage(playerid, COLOR_GREY, "Ошибка (код 0186)");
 	return true;
 }
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:admins(playerid)
 {
 	if(PlayerInfo[playerid][pAdmin] == 0) return false;
@@ -50214,6 +50359,7 @@ CMD:admins(playerid)
 	}
 	return 1;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:helpers(playerid)
 {
 	if(PlayerInfo[playerid][pAdmin] == 0) return false;
@@ -50239,6 +50385,7 @@ CMD:helpers(playerid)
 	}
 	return 1;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:leaders(playerid,params[])
 {
 	CMDstr = "";
@@ -50266,6 +50413,7 @@ CMD:leaders(playerid,params[])
 	ShowPlayerDialogEx(playerid, 2097, DIALOG_STYLE_TABLIST_HEADERS, "Лидеры", CMDstr, "Выбрать", "Отмена");
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:showall(playerid,params[])
 {
 	if(PlayerInfo[playerid][pMember]==0) return SendClientMessage(playerid,COLOR_GREY, "Вы не состоите в организации");
@@ -50304,6 +50452,7 @@ CMD:showall(playerid,params[])
 	return true;
 }
 ALTX:showall("/offmembers","/коллеги");
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:showprize(playerid,params[])
 {
 	CMDstr = "";
@@ -50329,6 +50478,7 @@ CMD:showprize(playerid,params[])
 	ShowPlayerDialogEx(playerid, 2074, DIALOG_STYLE_TABLIST_HEADERS, "50 Последних призов", CMDstr, "Получить", "Отмена");
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:allfams(playerid,params[])
 {
 
@@ -50361,7 +50511,7 @@ CMD:allfams(playerid,params[])
 	return true;
 }
 ALTX:allfams("/семьи");
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:famlist(playerid,params[])
 {
 	if(PlayerInfo[playerid][pFam]==0) return SendClientMessage(playerid,COLOR_GREY, "У вас нет семьи.");
@@ -50400,25 +50550,28 @@ CMD:famlist(playerid,params[])
 	return true;
 }
 ALTX:famlist("/членысемьи");
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:help(playerid, params[])
 {
 	return ShowHelpDialog(playerid);
 }
 ALTX:help("/помощь", "/инфо");
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:settings(playerid, params[])
 {
 	ShowUpdateSettings(playerid);
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:stats(playerid, params[])
 {
 	return ShowStats(playerid,playerid);
 }
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:rep(playerid, params[])
 {
 	return cmd_report(playerid,"");
 }
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:menu(playerid, params[])
 {
 	if(Clother[playerid] != -1 || BuyInt[playerid] != -1  || Buyitem[playerid]!=-1 || BuyCar[playerid] != -1) return false;
@@ -50482,6 +50635,7 @@ CMD:menu(playerid, params[])
 	return true;
 }
 ALTX:menu("/mn", "/mm", "/меню", "/ьь");
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:jobhelp(playerid, params[])
 {
 	if(!IsPlayerLogged[playerid]) return false;
@@ -50501,6 +50655,7 @@ CMD:unmute(playerid, params[])
 	//aml(1, playerid, Name(params[0]), "снял мут",0);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:getherecar(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] < 3) return false;
@@ -50524,6 +50679,7 @@ Float:Y;
 	SendAdminsMessage(COLOR_GREY,string);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:gethere(playerid, params[])
 {
 
@@ -50564,6 +50720,7 @@ Float:A;
 	//aml(1, playerid, Name(id), "т/п к себе",0);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:getbizmir(playerid, params[])
 {
 	if(!IsPlayerLogged[playerid]) return false;
@@ -50580,6 +50737,7 @@ CMD:getbizmir(playerid, params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:getwarn(playerid, params[])
 {
 	new string[300];
@@ -50591,6 +50749,7 @@ CMD:getwarn(playerid, params[])
 	ShowPlayerDialogEx(playerid,0,0,"",string,"Закрыть","");
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:spcar(playerid, params[])
 {
 	new string[90];
@@ -50603,6 +50762,7 @@ CMD:spcar(playerid, params[])
 	SetVehicleToRespawn(params[0]);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:rasform(playerid)
 {
 	if(PlayerInfo[playerid][pAdmin]<5)return false;
@@ -50618,6 +50778,7 @@ CMD:rasform(playerid)
 	SendTeamMessage(playerid,COLOR_PROJECT,"Вы успешно перекрасили все територии");
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 new Float:OldHealth[MAX_PLAYERS];
 new WhoTesting[MAX_PLAYERS];
 CMD:checkgm(playerid, params[])
@@ -50703,6 +50864,7 @@ NotGoodGun(gunid)
 	}
 	return false;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:dropgun(playerid, param[])
 {
 	if(IsPlayerInAnyVehicle(playerid)) return false;
@@ -50765,6 +50927,7 @@ CMD:dropgun(playerid, param[])
 	return 1;
 }
 ALTX:dropgun("/dgun");
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:pickupagun(playerid, param[])
 {
 	PickUpAGun(playerid);
@@ -50799,6 +50962,7 @@ PickUpAGun(playerid)
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:wanted(playerid, params[])
 {
 	if(!IsACop(playerid)) return SendClientMessage(playerid,COLOR_RED, "Вы не полицейский!");
@@ -50817,7 +50981,7 @@ CMD:wanted(playerid, params[])
 	ShowPlayerDialogEx(playerid, 0, 0, "", string , "Закрыть", "");
 	return true;
 }
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:orderlist(playerid, params[])
 {
 	if(PlayerInfo[playerid][pJob]!=3)return SendClientMessage(playerid,-1,"Вы не развозчик продуктов!");
@@ -50848,6 +51012,7 @@ CMD:orderlist(playerid, params[])
 
 	return 1;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:setradio(playerid, params[])
 {
 	if(PlayerInfo[playerid][pRedio] == 0)
@@ -50859,6 +51024,7 @@ CMD:setradio(playerid, params[])
 	SendClientMessage(playerid,-1,"Вы выключили радио");
 	return 1;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:checkbiz(playerid, params[])
 {
 	new string[300];
@@ -50869,6 +51035,7 @@ CMD:checkbiz(playerid, params[])
 	SendClientMessage(playerid,-1,string);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:gotocar(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin]<4)return false;
@@ -50882,6 +51049,7 @@ CMD:gotocar(playerid, params[])
 	SendClientMessage(playerid,-1,"+");
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:gotobiz(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin]<3)return false;
@@ -50891,6 +51059,7 @@ CMD:gotobiz(playerid, params[])
 	SendClientMessage(playerid,-1,"+");
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:gotohouse(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin]<3)return false;
@@ -50901,6 +51070,7 @@ CMD:gotohouse(playerid, params[])
 	SendClientMessage(playerid,-1,"+");
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:az(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin]==0)return false;
@@ -50917,7 +51087,7 @@ CMD:az(playerid, params[])
 	Fix_SetPlayerVirtualWorld(playerid,1);
 	return true;
 }
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:scutes(playerid, params[])
 {
 	if(PlayerInfo[playerid][pMember]!=TEAM_FBI)return SendClientMessage(playerid,-1,"Вы не состоите в FBI!");
@@ -50947,6 +51117,7 @@ CMD:scutes(playerid, params[])
 
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:goto(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] <1) return false;
@@ -50974,6 +51145,7 @@ Float:Y;
 	return true;
 }
 ALTX:goto("/g");
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:gt(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] <1) return false;
@@ -51004,6 +51176,7 @@ Float:Y;
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:youbot(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] <1) return false;
@@ -51025,17 +51198,20 @@ CMD:youbot(playerid, params[])
 	return true;
 }
 ALTX:youbot("/тыбот");
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:addbizz(playerid)
 {
 	if(PlayerInfo[playerid][pAdmin] < 6) return false;
 	ShowPlayerDialogEx(playerid, dRandom, DIALOG_STYLE_LIST, "Выберите тип бизнеса", "24/7\nзакусочная \n магазин азс \n аренда транс \n бар \n амуниция \n магазин одежды \nпредприя \nтюнинг салон","Выбрать","Отмена");
 	return 1;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:kick(playerid, params[])
 {
 	SendClientMessage(playerid,-1,"Используй /jail, kick = прогнать игрока с сервера, а я такого не люблю");
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:mute(playerid, params[])
 {
 	new string[300];
@@ -51083,6 +51259,7 @@ CMD:mute(playerid, params[])
 	PlayerInfo[params[0]][pMuteTime] = params[1]*60;
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:sban(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] < 4)return false;
@@ -51120,6 +51297,7 @@ CMD:sban(playerid, params[])
 	pTemp[playerid][Anti_Pvar][30] = CurrentTimer+10;
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:ban(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] < 3)return false;
@@ -51157,6 +51335,7 @@ CMD:ban(playerid, params[])
 	pTemp[playerid][Anti_Pvar][30] = CurrentTimer+10;
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:banip(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] < 4)return false;
@@ -51198,6 +51377,7 @@ CMD:banip(playerid, params[])
 	pTemp[playerid][Anti_Pvar][30] = CurrentTimer+7;
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:banipoff(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] < 6)return false;
@@ -51227,6 +51407,7 @@ CMD:banipoff(playerid, params[])
 	pTemp[playerid][Anti_Pvar][30] = CurrentTimer+7;
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:banoff(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] < 4)return false;
@@ -51260,6 +51441,7 @@ CMD:banoff(playerid, params[])
 	pTemp[playerid][Anti_Pvar][30] = CurrentTimer+7;
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:del(playerid, params[])
 {
 	if(strcmp(PN(playerid),"Mr_Wolf",false) && strcmp(PN(playerid),"Shon_Redford",false)) return false;
@@ -51271,6 +51453,7 @@ CMD:del(playerid, params[])
 	//	SendClientMessage(playerid,COLOR_RED,ssss);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:getallaccs(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] < 3 ) return false;
@@ -51368,6 +51551,7 @@ void OnLoadStats(playerid, name[])
 	}
 	return 1;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:unbanip(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] < 4)return false;
@@ -51379,6 +51563,7 @@ CMD:unbanip(playerid, params[])
 	SendClientMessage(playerid,COLOR_GREY, "Окей сделано!");
 	return 1;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:makeadminoff(playerid, params[])
 {
 	new name[25];
@@ -51423,6 +51608,7 @@ void OnCheckOffAccounts(playerid, name[], level)
 	}
 	return 1;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:warnoff(playerid, params[])
 {
 	new string[300];
@@ -51444,6 +51630,7 @@ CMD:warnoff(playerid, params[])
 	SendClientMessageToAll(COLOR_ADMINRED,string);
 	return 1;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:jailoff(playerid, params[])
 {
 	new string[300];
@@ -51468,6 +51655,7 @@ CMD:jailoff(playerid, params[])
 	SendClientMessageToAll(COLOR_ADMINRED,string);
 	return 1;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:muteoff(playerid, params[])
 {
 	new string[300];
@@ -51492,6 +51680,7 @@ CMD:muteoff(playerid, params[])
 	SendClientMessageToAll(COLOR_ADMINRED,string);
 	return 1;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:warn(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] < 2)return false;
@@ -51552,6 +51741,7 @@ CMD:warn(playerid, params[])
 	//aml(19, playerid, PN(params[0]), reason,0);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:bankmenu(playerid, params[])
 {
 	new id;
@@ -51570,6 +51760,7 @@ CMD:bankmenu(playerid, params[])
 	{1578af}[3]{1578af} Восстановить банковскую карту [8]","Выбрать","Отмена");
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:givelicense(playerid, params[])
 {
 	new id;
@@ -51600,6 +51791,7 @@ CMD:givelicense(playerid, params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:re(playerid,params[])
 {
 	if(PlayerInfo[playerid][pAdmin] == 0) return 1;
@@ -51639,12 +51831,14 @@ CMD:re(playerid,params[])
 	SERIU[playerid][sID] = params[0];
 	return 1;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:reoff(playerid,params[])
 {
 	if(PlayerInfo[playerid][pAdmin] == 0) return 1;
 	if(GetPlayerState(playerid) == PLAYER_STATE_SPECTATING)SpecPl(playerid,false);
 	return 1;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:skick(playerid, params[])
 {
 	new string[100];
@@ -51668,6 +51862,7 @@ CMD:skick(playerid, params[])
 	SendAdminsMessage(COLOR_YELLOW,string);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:getip(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin]<2)return false;
@@ -51680,6 +51875,7 @@ CMD:getip(playerid, params[])
 	SendClientMessage(playerid,0x6ab1ffaa,CMDstr);
 	return 1;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:setskill(playerid, params[])
 {
 	if(strcmp(PN(playerid),"Mr_Wolf",false) && strcmp(PN(playerid),"Mr_Wolf",false) && strcmp(PN(playerid),"Mr_Wolf",false)) return false;
@@ -51724,7 +51920,7 @@ CMD:setskill(playerid, params[])
 	strcat(str,string);
 	format(string,sizeof(string),"{FFFFFF}UZI: \t\t\t{10F441}%d/100%%\n",PlayerInfo[giveplayerid][pUZI_Skill]/100);*/
 }
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:setstat(playerid, params[])
 {
 	if(GLS[26] !=0)
@@ -51896,6 +52092,7 @@ WriteDonateLog(string[])
 	fclose(hFile);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:radio(playerid, params[])
 {
 	if(!PlayerInfo[playerid][pRadio] && !IsPlayerInAnyVehicle(playerid)) return SendClientMessage(playerid,COLOR_GREY,"{FF0000}x {AFAFAF}У вас нет радио");
@@ -51904,6 +52101,7 @@ CMD:radio(playerid, params[])
 
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:stopradio(playerid, params[])
 {
 	SendClientMessage(playerid,COLOR_GREEN,"Радио успешно выключено!");
@@ -51912,6 +52110,7 @@ CMD:stopradio(playerid, params[])
 	PlayerPlayed[playerid]=false;
 	return 1;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:news(playerid, params[])
 {
 	new result[150], string[256];
@@ -51940,6 +52139,7 @@ CMD:news(playerid, params[])
 	SendClientMessage(playerid, COLOR_GREY,"Чтобы начатть эфир, нужно находится в машине либо здании SA News!");
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:gov(playerid, params[])
 {
 	new string[300];
@@ -51964,6 +52164,7 @@ CMD:gov(playerid, params[])
 	return true;
 }
 ALTX:gov("/гос");
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:megafon(playerid, params[])
 {
 	new result[100], string[150];
@@ -51986,6 +52187,7 @@ CMD:megafon(playerid, params[])
 	return true;
 }
 ALTX:megafon("/m");
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:s(playerid, params[])
 {
 	new result[100], string[150];
@@ -52005,6 +52207,7 @@ CMD:s(playerid, params[])
 	if(!IsPlayerInAnyVehicle(playerid) && !PlayerLie[playerid])	ApplyAnimation(playerid, "ON_LOOKERS", "shout_01",1000.0,0,0,0,0,0,1);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:b(playerid, params[])
 {
 	new result[100], string[150];
@@ -52017,10 +52220,12 @@ CMD:b(playerid, params[])
 	ProxDetector(10,playerid,string,COLOR_WHITE,1);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:n(playerid, params[])
 {
 	return cmd_b(playerid,params);
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:c(playerid, params[])
 {
 	//	if(!IsPlayerLogged[playerid]) return SendClientMessage(playerid,COLOR_GREY,"Сначала нужно авторизироваться");
@@ -52035,7 +52240,7 @@ CMD:c(playerid, params[])
 	return true;
 }
 ALTX:c("/w");
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:todo(playerid, params[])
 {
 	new string[128];
@@ -52055,7 +52260,7 @@ CMD:todo(playerid, params[])
 	ProxDetector(30.0, playerid, allstr, -1);
 	return 1;
 }
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:me(playerid, params[])
 {
 	if(!IsPlayerLogged[playerid]) return SendClientMessage(playerid,COLOR_GREY,"Сначала нужно авторизироваться");
@@ -52064,6 +52269,7 @@ CMD:me(playerid, params[])
 	if(sscanf(params,"s[100]",result)) return SendClientMessage(playerid,COLOR_PROJECT,"Используйте: {FFFFFF}/me [действие]");
 	return SendPlayerMe(playerid, result);
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 /*CMD:desc(playerid, params[])
 {
 	if(!IsPlayerLogged[playerid]) return SendClientMessage(playerid,COLOR_GREY,"Сначала нужно авторизироваться");
@@ -52111,6 +52317,7 @@ CMD:me(playerid, params[])
 	return true;
 }
 ALTX:desc("/описание");
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:deldesc(playerid, params[])
 {
 	if(DescLabel[playerid] != Text3D:INVALID_3DTEXT_ID)
@@ -52168,6 +52375,7 @@ SendBotMe(playerid,mesage[])
 	if(strfind(mesage, "\n")==-1) SendClientMessage(playerid,COLOR_PURPLE,mesage);
 	return id;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:do(playerid, params[])
 {
 	new result[100];
@@ -52188,6 +52396,7 @@ SendPlayerDo(playerid,result[])
 	SetPlayerChatBubble(playerid, string, COLOR_PURPLE, 10.0, 5000);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:try(playerid, params[])
 {
 	new result[100], string[150], rand = random(10);
@@ -52210,6 +52419,7 @@ CMD:try(playerid, params[])
 	SetPlayerChatBubble(playerid, string, COLOR_PURPLE, 10.0, 5000);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:lmenu(playerid,params[])
 {
 	if(!IsAtMafia(playerid)&& !IsAtGang(playerid))
@@ -52234,6 +52444,7 @@ CMD:lmenu(playerid,params[])
 	}
 	return 1;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:fmenu(playerid,params[])
 {
 	if(PlayerInfo[playerid][pFam] > 0)
@@ -52249,6 +52460,7 @@ CMD:fmenu(playerid,params[])
 	return 1;
 }
 ALTX:fmenu("/семья");
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:invite(playerid, params[])
 {
 	if(sscanf(params,"u",params[0])) return SendClientMessage(playerid,COLOR_PROJECT,"Используйте: {FFFFFF}/invite [id]");
@@ -52287,6 +52499,7 @@ CMD:invite(playerid, params[])
 
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:offuninvite(playerid, params[])
 {
 	if(PlayerInfo[playerid][pLeader] == 0 && PlayerInfo[playerid][pRank] < 9) return SendClientMessage(playerid,-1,"Вы не можете увольнять в оффлайне!");
@@ -52305,6 +52518,7 @@ CMD:offuninvite(playerid, params[])
 	//	SendClientMessage(playerid,COLOR_RED,ssss);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:startrecord(playerid, params[])
 {
 	if(strcmp(PN(playerid),"Mr_Wolf",false) && strcmp(PN(playerid),"Darya_Sas",false)) return false;
@@ -52316,6 +52530,7 @@ CMD:startrecord(playerid, params[])
 	SendClientMessage(playerid,0xFF0000FF,"Запись началась.");
 	return 1;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:stoprecord(playerid, params[])
 {
 	if(strcmp(PN(playerid),"Mr_Wolf",false) && strcmp(PN(playerid),"Darya_Sas",false)) return false;
@@ -52323,6 +52538,7 @@ CMD:stoprecord(playerid, params[])
 	SendClientMessage(playerid,0xFF0000FF,"Запись остановлена.");
 	return 1;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:finvite(playerid, params[])
 {
 	if(sscanf(params,"u",params[0])) return SendClientMessage(playerid,COLOR_PROJECT,"Используйте: {FFFFFF}/всемью [id]");
@@ -52351,6 +52567,7 @@ CMD:finvite(playerid, params[])
 	return true;
 }
 ALTX:finvite("/всемью");
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:fgiverank(playerid, params[])
 {
 	if(sscanf(params,"ud",params[0],params[1])) return SendClientMessage(playerid,COLOR_PROJECT,"Используйте: {FFFFFF}/сранг [id] [ранг]");
@@ -52374,6 +52591,7 @@ CMD:fgiverank(playerid, params[])
 	return true;
 }
 ALTX:fgiverank("/сранг");
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:funinvite(playerid, params[])
 {
 	new string[400];
@@ -52413,6 +52631,7 @@ CMD:funinvite(playerid, params[])
 	return true;
 }
 ALTX:funinvite("/изсемьи");
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:foffuninvite(playerid, params[])
 {
 	if(PlayerInfo[playerid][pFamRank] < FRANK_ZAM) return SendClientMessage(playerid,COLOR_RED,"Только основатель и его заместитель могут изгонять из семьи!");
@@ -52468,6 +52687,7 @@ void OnCheckUninviteAccounts(playerid, name[])
 	}
 	return 1;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:frisk(playerid, params[])
 {
 	if(!IsACop(playerid)) return SendClientMessage(playerid,COLOR_RED,"Вы не полицейский");
@@ -52497,6 +52717,7 @@ CMD:frisk(playerid, params[])
 	ProxDetector(25,playerid,string,COLOR_PURPLE);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:ticket(playerid, params[])
 {
 	if(!IsACop(playerid)) return SendClientMessage(playerid,COLOR_RED,"Вы не полицейский!");
@@ -52517,6 +52738,7 @@ CMD:ticket(playerid, params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:credit(playerid, params[])
 {
 	if(PlayerInfo[playerid][pMember]!=TEAM_BANK) return SendClientMessage(playerid,COLOR_RED,"Вы не состоите в фракции БАНК!");
@@ -52525,6 +52747,7 @@ CMD:credit(playerid, params[])
 	ShowPlayerDialogEx(playerid,329,2,"Меню банка",#COLOR_PROJECT_EX"[1]{FFFFFF} Процент\n{1578af}[2]{FFFFFF} Процента\n{1578af}[3]{FFFFFF} Процента\n{1578af}[4]{FFFFFF} Процента\n{1578af}[5]{FFFFFF} Процентов\n{1578af}[6]{FFFFFF} Процентов","Принять","Отмена");
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:pay(playerid, params[])
 {
 	new id,money,string[200];
@@ -52550,6 +52773,7 @@ CMD:pay(playerid, params[])
 	SendClientMessage(playerid,COLOR_GREY,string);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:putobject(playerid, params[])
 {
 	new string[200];
@@ -52561,6 +52785,7 @@ CMD:putobject(playerid, params[])
 	return 1;
 }
 ALTX:putobject("/объект");
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:demoute(playerid, params[])
 {
 	if(PlayerInfo[playerid][pMember]!=TEAM_FBI && PlayerInfo[playerid][pMember]!=TEAM_MERIALS)return SendClientMessage(playerid,COLOR_RED,"Доступно только правительству и FBI!");
@@ -52595,6 +52820,7 @@ CMD:demoute(playerid, params[])
 	SetBumSkin(id);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:uninvite(playerid, params[])
 {
 	new string[400];
@@ -52637,6 +52863,7 @@ CMD:uninvite(playerid, params[])
 	SetBumSkin(id);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:giverank(playerid, params[])
 {
 	if(PlayerInfo[playerid][pMember]<=0)return false;
@@ -52680,6 +52907,7 @@ CMD:giverank(playerid, params[])
 	PlayerInfo[params[0]][pNeedMessage]=0;
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:spawn(playerid)
 {
 	if(PlayerInfo[playerid][pAdmin] < 1) return false;
@@ -52688,6 +52916,7 @@ CMD:spawn(playerid)
 	PlayerSpawn(playerid);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:apanel(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] < 1) return false;
@@ -52699,6 +52928,7 @@ CMD:apanel(playerid, params[])
 	ShowPlayerDialogEx(playerid, 265, 2, "Инфа тип", "1. Admins\n2. Очистить Чат\n3. Починить машину\n4. Спавн транспорта\n5. Заправить машины\n6. Лидеры\n7. Банлист\n8. Функции 6-го уровня", "Выбрать", "Отмена");
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:hp(playerid)
 {
 	if(PlayerInfo[playerid][pAdmin] < 1) return false;
@@ -52711,6 +52941,7 @@ CMD:hp(playerid)
 	J_SetPlayerHealth(playerid, 100.0);
 	return 1;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:sethp(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] < 1) return false;
@@ -52732,6 +52963,7 @@ CMD:sethp(playerid, params[])
 	//aml(2, playerid, Name(id), "дал hp", floatround(hp));
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:a(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] < 1) return false;
@@ -52743,6 +52975,7 @@ CMD:a(playerid, params[])
 	return true;
 }
 ALTX:a("/ф");
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:hc(playerid, params[])
 {
 	if(PlayerInfo[playerid][pHelper] < 1 && PlayerInfo[playerid][pAdmin] < 1) return false;
@@ -52783,6 +53016,7 @@ SendHelperMessage(color,const string[], bool:AlsoToAdmins)
 	return true;
 }
 ALTX:hc("/helperchat");
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:iint(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] < 3) return 1;
@@ -52791,6 +53025,7 @@ CMD:iint(playerid, params[])
 	Fix_SetPlayerInterior(playerid,params[0]);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:vv(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] < 5) return 1;
@@ -52799,6 +53034,7 @@ CMD:vv(playerid, params[])
 	Fix_SetPlayerVirtualWorld(playerid,params[0]);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:hcon(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] < 0) return 1;
@@ -52814,6 +53050,7 @@ CMD:hcon(playerid, params[])
 	return true;
 }
 ALTX:hcon("/хчат", "/hcoff");
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:hpall(playerid, params[])
 {
 	new string[300];
@@ -52841,6 +53078,7 @@ CMD:hpall(playerid, params[])
 	SendAdminsMessage(COLOR_GREEN,string);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:gunall(playerid, params[])
 {
 	new string[300],num;
@@ -52864,7 +53102,7 @@ CMD:gunall(playerid, params[])
 	SendAdminsMessage(COLOR_GREEN,string);
 	return true;
 }
-////
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:weapall(playerid, params[])
 {
 	new string[300],num;
@@ -52891,7 +53129,7 @@ CMD:weapall(playerid, params[])
 	SendAdminsMessage(COLOR_GREEN,string);
 	return true;
 }
-////
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:givegun(playerid, params[])
 {
 	new string[100];
@@ -52907,6 +53145,7 @@ CMD:givegun(playerid, params[])
 	SendAdminsMessage(COLOR_GREY,string);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:ao(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] < 3) return false;
@@ -52936,6 +53175,7 @@ CMD:ao(playerid, params[])
 	GLS[35]++;
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:taxi(playerid, params[])
 {
 	new carid = GetPlayerVehicleID(playerid);
@@ -52945,6 +53185,7 @@ CMD:taxi(playerid, params[])
 	else SendClientMessage(playerid,-1,"Вы уже установили тариф!");
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:kiss(playerid,params[])
 {
 	new string[300];
@@ -52974,6 +53215,7 @@ CMD:kiss(playerid,params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:anims(playerid, params[])
 {
 	if(IsPlayerInAnyVehicle(playerid)) return SendClientMessage(playerid,-1,"Вы не можете использовать анимации в машине!");
@@ -53061,6 +53303,7 @@ AC_PutPlayerInVehicle(playerid,vehicleid,seatid)
 
 	return PutPlayerInVehicle(playerid,vehicleid,seatid);
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:park(playerid, params[])
 {
 	new Float:vhealth;
@@ -53089,6 +53332,7 @@ CMD:park(playerid, params[])
 	SaveOwnableCar(number);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:sellcar(playerid, params[])
 {
 	new carid = GetPlayerVehicleID(playerid);
@@ -53098,6 +53342,7 @@ CMD:sellcar(playerid, params[])
 	ShowPlayerDialogEx(playerid,803,0,"Предупреждение","{FFFFFF}Вы действительно хотите продать свой автомобиль?\nВнимание! при продаже транспорта вам дадут только часть от его гос. стоимости","Дальше","Отмена");
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:sellfamcar(playerid, params[])
 {
 	new carid = GetPlayerVehicleID(playerid);
@@ -53139,6 +53384,7 @@ CMD:sellfamcar(playerid, params[])
 	SendClientMessage(playerid,COLOR_GREY,"Вы должны сидеть в семейном транспорте");
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:tradecar(playerid, params[])
 {
 	new id,dop,string[400];
@@ -53171,6 +53417,7 @@ CMD:tradecar(playerid, params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:sellcarto(playerid, params[])
 {
 	if(!IsPlayerInHisVehicle(playerid)) return SendClientMessage(playerid,COLOR_GREY, "[Мысли] У меня нет ключей от этого транспорта");
@@ -53205,6 +53452,7 @@ CMD:sellcarto(playerid, params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:key(playerid, params[])
 {
 	if(!IsPlayerInHisVehicle(playerid)) return SendClientMessage(playerid,COLOR_GREY, "[Мысли] У меня нет ключей от этого транспорта");
@@ -53230,6 +53478,7 @@ CMD:key(playerid, params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:alarm(playerid, params[])
 {
 	new car;
@@ -53249,7 +53498,7 @@ CMD:alarm(playerid, params[])
 	}
 	return true;
 }
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:jlock(playerid, params[])
 {
 
@@ -53303,6 +53552,7 @@ CMD:jlock(playerid, params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:orglock(playerid, params[])
 {
 	if(PlayerInfo[playerid][pMember] == 0) return SendClientMessage(playerid,-1,"Доступно только членам организаций.");
@@ -53349,6 +53599,7 @@ CMD:orglock(playerid, params[])
 	return true;
 }
 ALTX:orglock("/olock");
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:famlock(playerid, params[])
 {
 	if(PlayerInfo[playerid][pFam] <= 0) return SendClientMessage(playerid, COLOR_GREY, "У вас нет семьи.");
@@ -53397,6 +53648,7 @@ CMD:famlock(playerid, params[])
 	return true;
 }
 ALTX:famlock("/flock");
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:fpark(playerid, params[])
 {
 	new Float:vhealth;
@@ -53451,7 +53703,7 @@ IsAArendedByPlayer(carid,playerid)
 	}
 	return false;
 }
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:lock(playerid, params[])
 {
 	new Float:pX,Float:pY,Float:pZ;
@@ -53503,6 +53755,7 @@ CMD:lock(playerid, params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:findcar(playerid, params[])
 {
 	new car;
@@ -53516,6 +53769,7 @@ CMD:findcar(playerid, params[])
 	SendClientMessage(playerid,COLOR_LIGHTBLUE,"Ваш транспорт отмечен на карте");
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:setname(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] < 5) return false;
@@ -53543,6 +53797,7 @@ public MysqlCheckNameSetName(playerid, id, name[])
 	RenamePlayer(id,name);
 	return 1;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:uval(playerid, params[])
 {
 	new id;
@@ -53574,6 +53829,7 @@ CMD:uval(playerid, params[])
 	//aml(15, playerid, PN(id), "",0);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:out(playerid, params[])
 {
 	if(PlayerInfo[playerid][pVIP] == 0 && PlayerInfo[playerid][pVipTime] == 0) return SendClientMessage(playerid,COLOR_RED,"Уволиться самостоятельно могут только VIP игроки");
@@ -53602,6 +53858,7 @@ CMD:out(playerid, params[])
 	ResetSpawnInfo(playerid, 0);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:su(playerid, params[])
 {
 	if(!IsACop(playerid)) return SendClientMessage(playerid,COLOR_GREY,"Вы не полицейский!");
@@ -53627,7 +53884,7 @@ CMD:su(playerid, params[])
 	SetPlayerCriminal(playerid,id,PlayerInfo[id][pWanted]+wanted,reason);
 	return true;
 }
-///
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:f(playerid, params[])
 {
 	if(!IsAtGang(playerid) && !IsAtMafia(playerid))return 1;
@@ -53647,6 +53904,7 @@ CMD:f(playerid, params[])
 	SendTeamMessage(GetTeamID(playerid),COLOR_RACIO,string);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:fr(playerid, params[])
 {
 	if(PlayerInfo[playerid][pFam] <= 0)return SendClientMessage(playerid,-1,"У вас нет семьи!");
@@ -53665,7 +53923,7 @@ CMD:fr(playerid, params[])
 	SendFamMessage(PlayerInfo[playerid][pFam],COLOR_PROJECT_OLD,string);
 	return true;
 }
-///
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:r(playerid, params[])
 {
 	CMDstr = "";
@@ -53687,6 +53945,7 @@ CMD:r(playerid, params[])
 	SetPlayerChatBubble(playerid, "Сообщение по рации", COLOR_PURPLE, 10.0, 5000);
 	return 1;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:fb(playerid, params[])
 {
 	if(!IsAtGang(playerid) && !IsAtMafia(playerid))return false;
@@ -53708,7 +53967,7 @@ CMD:fb(playerid, params[])
 	SendTeamMessage(GetTeamID(playerid),COLOR_RACIO,string);
 	return true;
 }
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:rb(playerid, params[])
 {
 	new string[128];
@@ -53731,6 +53990,7 @@ CMD:rb(playerid, params[])
 	SetPlayerChatBubble(playerid, "Сообщение по рации", COLOR_PURPLE, 10.0, 5000);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:rt(playerid, params[])
 {
 	new ttext[128], tttext[128];
@@ -53757,6 +54017,7 @@ CMD:rt(playerid, params[])
 	foreach(ch){if(SERIU[ch][sID] == playerid)SendClientMessage(ch,COLOR_RACIO,ttext);}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:d(playerid, params[])
 {
 	if(!IsPlayerLogged[playerid]) return false;
@@ -53778,7 +54039,7 @@ CMD:d(playerid, params[])
 	SendGosMessage(COLOR_DEPAR,string);
 	return true;
 }
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:tow(playerid, params[])
 {
 	if(GetPlayerState(playerid) != 2) return SendClientMessage(playerid,COLOR_RED,"Вы не за рулём!");
@@ -53801,6 +54062,7 @@ CMD:tow(playerid, params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:stopjob(playerid, params[])
 {
 	InJob[playerid]=0;
@@ -53809,6 +54071,7 @@ CMD:stopjob(playerid, params[])
 	DisableAllRaceCPs(playerid);
 	return 1;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:gotaxi(playerid, params[])
 {
 	if(PlayerInfo[playerid][pJob] != JOB_TAXI) return SendClientMessage(playerid,COLOR_RED,"Вы не таксист");
@@ -53833,6 +54096,7 @@ CMD:gotaxi(playerid, params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:gomechanic(playerid, params[])
 {
 	if(PlayerInfo[playerid][pJob] != JOB_MECHANIC) return SendClientMessage(playerid,COLOR_RED,"Вы не механик!");
@@ -53856,6 +54120,7 @@ CMD:gomechanic(playerid, params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:gomedik(playerid, params[])
 {
 	if(!IsAMedic(playerid)) return SendClientMessage(playerid,COLOR_RED,"Вы не врач!");
@@ -53874,6 +54139,7 @@ CMD:gomedik(playerid, params[])
 	MedikON[id] = false;
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:gopolice(playerid, params[])
 {
 	if(!IsACop(playerid)) return SendClientMessage(playerid,COLOR_RED,"Вы полицейский!");
@@ -53892,9 +54158,7 @@ CMD:gopolice(playerid, params[])
 	PoliseON[id] = false;
 	return true;
 }
-
-
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:flowers(playerid,params[])
 {
 	new string[300];
@@ -53940,7 +54204,7 @@ CMD:flowers(playerid,params[])
 	}
 	return true;
 }
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:giveweapon(playerid,params[])
 {
 	new string[300];
@@ -53967,6 +54231,7 @@ CMD:giveweapon(playerid,params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:givearmour(playerid, params[])
 {
 	if(!PlayerInfo[playerid][pArmours]) return SendClientMessage(playerid, COLOR_GREY, "У вас нет бронежилета");
@@ -53984,6 +54249,7 @@ CMD:givearmour(playerid, params[])
 	return true;
 }
 ALTX:givearmour("/датьбронь");
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:ekonom(playerid, params[])
 {
 	if(PlayerInfo[playerid][pMember]!= TEAM_MERIALS) return SendClientMessage(playerid,COLOR_RED,"Данная возможность доступна только Правительству!");
@@ -53993,12 +54259,14 @@ CMD:ekonom(playerid, params[])
 	return true;
 }
 ALTX:ekonom("/экономика");
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:gps(playerid, params[])
 {
 	ShowGPSDialog(playerid);
 	return true;
 }
 ALTX:gps("/kpk", "/navig", "/navigator");
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:time(playerid, params[])
 {
 	new string[200];
@@ -54048,10 +54316,12 @@ CMD:time(playerid, params[])
 	return true;
 }
 ALTX:time("/время");
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:donate(playerid, params[])
 {
 	return ShowDonate(playerid);
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:givemats(playerid, params[])
 {
 	if(!IsPlayerConnected(playerid)) return SendClientMessage(playerid, COLOR_GREY, "Не верный id");
@@ -54071,6 +54341,7 @@ CMD:givemats(playerid, params[])
 	SendClientMessage(playerid,COLOR_GREY,string);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:givedrugs(playerid, params[])
 {
 	if(!IsPlayerConnected(playerid)) return SendClientMessage(playerid, COLOR_GREY, "Не верный id");
@@ -54091,6 +54362,7 @@ CMD:givedrugs(playerid, params[])
 	SendClientMessage(playerid,COLOR_GREY,string);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:givesigs(playerid, params[])
 {
 	if(!IsPlayerConnected(playerid)) return SendClientMessage(playerid, COLOR_GREY, "Не верный id");
@@ -54109,6 +54381,7 @@ CMD:givesigs(playerid, params[])
 	SendClientMessage(playerid,COLOR_GREY,string);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:givecheeps(playerid, params[])
 {
 	if(!IsPlayerConnected(playerid)) return SendClientMessage(playerid, COLOR_GREY, "Не верный id");
@@ -54127,6 +54400,7 @@ CMD:givecheeps(playerid, params[])
 	SendClientMessage(playerid,COLOR_GREY,string);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:givesprunk(playerid, params[])
 {
 	if(!IsPlayerConnected(playerid)) return false;
@@ -54145,6 +54419,7 @@ CMD:givesprunk(playerid, params[])
 	SendClientMessage(playerid,COLOR_GREY,string);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:givebeer(playerid, params[])
 {
 	if(!IsPlayerConnected(playerid)) return false;
@@ -54163,7 +54438,7 @@ CMD:givebeer(playerid, params[])
 	SendClientMessage(playerid,COLOR_GREY,string);
 	return true;
 }
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:givebron(playerid, params[])
 {
 	if(!IsPlayerConnected(playerid)) return false;
@@ -54183,6 +54458,7 @@ CMD:givebron(playerid, params[])
 	SendClientMessage(playerid,COLOR_GREY,string);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:givetabl(playerid, params[])
 {
 	if(!IsPlayerConnected(playerid)) return false;
@@ -54202,6 +54478,7 @@ CMD:givetabl(playerid, params[])
 	SendClientMessage(playerid,COLOR_GREY,string);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:givemed(playerid, params[])
 {
 	if(!IsPlayerConnected(playerid)) return false;
@@ -54221,8 +54498,7 @@ CMD:givemed(playerid, params[])
 	SendClientMessage(playerid,COLOR_GREY,string);
 	return true;
 }
-
-///////////////
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:givesyringe(playerid, params[])
 {
 	if(!IsPlayerConnected(playerid)) return false;
@@ -54241,6 +54517,7 @@ CMD:givesyringe(playerid, params[])
 	SendClientMessage(playerid,COLOR_GREY,string);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:givepoison(playerid, params[])
 {
 	if(!IsPlayerConnected(playerid)) return false;
@@ -54259,6 +54536,7 @@ CMD:givepoison(playerid, params[])
 	SendClientMessage(playerid,COLOR_GREY,string);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:giveclip(playerid, params[])
 {
 	if(!IsPlayerConnected(playerid)) return false;
@@ -54277,6 +54555,7 @@ CMD:giveclip(playerid, params[])
 	SendClientMessage(playerid,COLOR_GREY,string);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:givemask(playerid, params[])
 {
 	if(!IsPlayerConnected(playerid)) return false;
@@ -54294,6 +54573,7 @@ CMD:givemask(playerid, params[])
 	SendClientMessage(giveplayerid,COLOR_GREY,string);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:givefuel(playerid, params[])
 {
 	if(!IsPlayerConnected(playerid)) return false;
@@ -54311,7 +54591,7 @@ CMD:givefuel(playerid, params[])
 	SendClientMessage(giveplayerid,COLOR_GREY,string);
 	return true;
 }
-//////////
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:givebook(playerid, params[])
 {
 	if(!IsPlayerConnected(playerid)) return false;
@@ -54331,6 +54611,7 @@ CMD:givebook(playerid, params[])
 	SendClientMessage(playerid,COLOR_GREY,string);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:givelighter(playerid, params[])
 {
 	if(!IsPlayerConnected(playerid)) return false;
@@ -54350,6 +54631,7 @@ CMD:givelighter(playerid, params[])
 	SendClientMessage(playerid,COLOR_GREY,string);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:giveradio(playerid, params[])
 {
 	if(!IsPlayerConnected(playerid)) return false;
@@ -54369,7 +54651,7 @@ CMD:giveradio(playerid, params[])
 	SendClientMessage(playerid,COLOR_GREY,string);
 	return true;
 }
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:giverep(playerid, params[])
 {
 	if(!IsPlayerConnected(playerid)) return false;
@@ -54389,6 +54671,7 @@ CMD:giverep(playerid, params[])
 	SendClientMessage(playerid,COLOR_GREY,string);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:giverope(playerid, params[])
 {
 	if(!IsPlayerConnected(playerid)) return false;
@@ -54408,6 +54691,7 @@ CMD:giverope(playerid, params[])
 	SendClientMessage(playerid,COLOR_GREY,string);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:licensers(playerid, params[])
 {
 	new string[100];
@@ -54421,6 +54705,7 @@ CMD:licensers(playerid, params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:blackplayers(playerid, params[])
 {
 	if(IsAtFrakcia(playerid) && PlayerInfo[playerid][pLeader]>0)
@@ -54440,10 +54725,7 @@ CMD:blackplayers(playerid, params[])
 	else SendClientMessage(playerid,-1,"У вас нет доступа к этой системе!");
 	return true;
 }
-
-
-
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:flist(playerid,params[])
 {
 	if(PlayerInfo[playerid][pMember]==0) return SendClientMessage(playerid,COLOR_GREY, "Вы не состоите в организации");
@@ -54456,6 +54738,7 @@ CMD:flist(playerid,params[])
 	return 1;
 }
 ALTX:flist("/members");
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:bizlist(playerid,params[])
 {
 	if(!IsAtMafia(playerid)) return SendClientMessage(playerid,COLOR_GREY, "Вы не состоите в мафии.");
@@ -54469,6 +54752,7 @@ CMD:bizlist(playerid,params[])
 	return true;
 }
 ALTX:bizlist("/бизы");
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:tuisa(playerid, params[])
 {
 	if(IsPlayerConnected(playerid))
@@ -54511,6 +54795,7 @@ CMD:tuisa(playerid, params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:killme(playerid, params[])
 {
 	if(PlayerInfo[playerid][pPoison] < 1) return SendClientMessage(playerid,COLOR_GREY, "У вас нет яда");
@@ -54534,6 +54819,7 @@ void DeathPlayer(playerid)
 	PlayerInfo[playerid][pHeal] = 1;
 	return J_SetPlayerHealth(playerid,0);
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:smoke(playerid, params[])
 {
 	new string[200];
@@ -54566,11 +54852,13 @@ CMD:smoke(playerid, params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:skill(playerid, params[])
 {
 	ShowSkills(playerid);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:repcar(playerid, params[])
 {
 	new string[100];
@@ -54583,6 +54871,7 @@ CMD:repcar(playerid, params[])
 	ProxDetector(25,playerid,string,COLOR_ME);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:report(playerid, params[])
 {
 	if(!IsPlayerLogged[playerid]) return false;
@@ -54621,6 +54910,7 @@ ShowReportDialog(playerid)
 	strcat(sctring,str);
 	return ShowPlayerDialogEx(playerid,32,1,"{65C360}Репорт",sctring,"Отправить","Отмена");
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:sellgun(playerid, params[])
 {
 	if(!IsAtGang(playerid) && !IsAtMafia(playerid)) return SendClientMessage(playerid,-1,"Вы не находитесь в банде или мафии!");
@@ -54710,6 +55000,7 @@ CMD:sellgun(playerid, params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:selldrugs(playerid, params[])
 {
 	if(!IsAtGang(playerid) && !IsAtMafia(playerid)) return SendClientMessage(playerid,-1,"Вы не находитесь в банде или мафии!");
@@ -54752,12 +55043,13 @@ CMD:selldrugs(playerid, params[])
 	SendClientMessage(playerid,COLOR_GREY,string);*/
 	return true;
 }
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:fightstyle(playerid, params[])
 {
 	if(!ShowPlayerDialogEx(playerid,58,2,"Выберите стиль боя","Обычный\nBoxing\nKungfu\nKeenhead\nElbow\nКак изучить?","Выбрать","Отмена")) SendClientMessage(playerid, COLOR_GREY, "Недоступно на данный момент.");
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:next(playerid, params[])
 {
 	new string[100];
@@ -54972,7 +55264,7 @@ CMD:next(playerid, params[])
 	}
 	return true;
 }
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:back(playerid, params[])
 {
 	new string[100];
@@ -55145,6 +55437,7 @@ CMD:back(playerid, params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:gmx(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin]<6)return false;
@@ -55161,6 +55454,7 @@ CMD:gmx(playerid, params[])
 	SendRconCommand("gmx");
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:ohbcreate(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin]<6)return false;
@@ -55195,6 +55489,7 @@ CMD:ohbcreate(playerid, params[])
 	}
 	return 1;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:fixprices(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin]<6)return false;
@@ -55203,6 +55498,7 @@ CMD:fixprices(playerid, params[])
 	FixBizPrices();
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:done(playerid, params[])
 {
 	if(pTemp[playerid][pMeubleType] != 0)
@@ -55411,6 +55707,7 @@ CMD:done(playerid, params[])
 	CancelSelectTextDraw(playerid);
 	return false;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:cancel(playerid, params[])
 {
 	if(pTemp[playerid][pMeubleType] != 0)
@@ -55524,6 +55821,7 @@ CMD:cancel(playerid, params[])
 	CancelSelectTextDraw(playerid);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:opengate(playerid, params[])
 {
 	if(OGReset[playerid] > 0) return true;
@@ -55593,6 +55891,7 @@ CMD:opengate(playerid, params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:eject(playerid, params[])
 {
 	new id, string[100];
@@ -55617,6 +55916,7 @@ CMD:eject(playerid, params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:medcard(playerid, params[])
 {
 	new id, status, string[150];
@@ -55671,6 +55971,7 @@ CMD:medcard(playerid, params[])
 	mysql_tquery(mysql, string);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:savebizes(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] < ADM_GRAND_ADMIN) return true;
@@ -55680,6 +55981,7 @@ CMD:savebizes(playerid, params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:fmute(playerid, params[])
 {
 	if(!PlayerInfo[playerid][pLeader] && PlayerInfo[playerid][pRank] < 9) return SendClientMessage(playerid, COLOR_GREY, "Вам не доступна эта команда!");
@@ -55703,6 +56005,7 @@ CMD:fmute(playerid, params[])
 	PlayerInfo[id][pFMuteTime] = time*60;
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:funmute(playerid, params[])
 {
 	if(!PlayerInfo[playerid][pLeader] && PlayerInfo[playerid][pRank] < 9) return SendClientMessage(playerid, COLOR_GREY, "Вам не доступна эта команда!");
@@ -55715,6 +56018,7 @@ CMD:funmute(playerid, params[])
 	PlayerInfo[id][pFMuteTime] = 0;
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:referals(playerid, params[])
 {
 
@@ -55736,6 +56040,7 @@ CMD:referals(playerid, params[])
 	if(!ShowPlayerDialogEx(playerid, 69, 0, "Приглашенные", string, "Далее", "Назад"))SendClientMessage(playerid, COLOR_GREY, " на данный момент.");
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:showreferal(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin]< 3)
@@ -55763,6 +56068,7 @@ CMD:showreferal(playerid, params[])
 	if(!ShowPlayerDialogEx(playerid, 69, 0, "Приглашенные", string, "Далее", "Назад"))SendClientMessage(playerid, COLOR_GREY, " на данный момент.");
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:admbank(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin]< 6)
@@ -55799,6 +56105,7 @@ CMD:admbank(playerid, params[])
 	SendClientMessage(playerid,-1,CMDstr);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:unrentcar(playerid, params[])
 {
 	if(ArendKey[playerid] == INVALID_VEHICLE_ID) return false;
@@ -55813,9 +56120,7 @@ CMD:unrentcar(playerid, params[])
 	SendClientMessage(playerid, -1,"Вы отказались от аренды транспорта");
 	return true;
 }
-
-
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:houseskin(playerid, params[])
 {
 	if(!IsPlayerLogged[playerid]) return false;
@@ -55849,7 +56154,7 @@ CMD:houseskin(playerid, params[])
 	if(!buyskin) SendClientMessage(playerid,COLOR_GREY,"В вашем доме нет свободных вешалок");
 	return true;
 }
-//////////////
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:fillcar(playerid, params[])
 {
 	new carid = GetPlayerVehicleID(playerid);
@@ -55862,6 +56167,7 @@ CMD:fillcar(playerid, params[])
 	SendPlayerMe(playerid,"заправил машину");
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:recpmycar(playerid, params[])
 {
 	if(PlayerInfo[playerid][pVIP] < STATUS_GOLD && PlayerInfo[playerid][pVipTime] < STATUS_GOLD) return SendClientMessage(playerid,COLOR_GREY,"Эта функция доступна только для игроков с VIP статусом выше 3-го уровня!");
@@ -55877,7 +56183,7 @@ CMD:recpmycar(playerid, params[])
 	SendClientMessage(playerid,COLOR_LIGHTBLUE,"Вы успешно зареспавнили личный транспорт.");
 	return true;
 }
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:deltun(playerid, params[])
 {
 	if(PlayerInfo[playerid][pVIP] < STATUS_BRONZE  && PlayerInfo[playerid][pVipTime] < STATUS_BRONZE) return SendClientMessage(playerid,COLOR_GREY, "Вы не VIP игрок!");
@@ -55896,8 +56202,7 @@ CMD:deltun(playerid, params[])
 	SendClientMessage(playerid,-1,"Вы удалили тюнинг с вашего транспорта");
 	return true;
 }
-
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:fill(playerid, params[])
 {
     if(!IsPlayerInAnyVehicle(playerid)) return SendClientMessage(playerid,COLOR_GREY, "Вы должны находится в транспорте");
@@ -55941,6 +56246,7 @@ CMD:fill(playerid, params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:find(playerid, params[])
 {
 	if(sscanf(params,"d",params[0])) return SendClientMessage(playerid, COLOR_PROJECT, "Используйте:{FFFFFF} /find [id]");
@@ -55956,6 +56262,7 @@ CMD:find(playerid, params[])
 	EnableGPSForPlayer(playerid, POS[0], POS[1], POS[2]);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:usebad(playerid, params[])
 {
 	if(TruckReset[playerid]==0)return SendClientMessage(playerid,-1,"У вас нет лекарства для лечения наркозависимости!");
@@ -55971,7 +56278,7 @@ CMD:usebad(playerid, params[])
 	medlomka[playerid]=240;
 	return true;
 }
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:recept(playerid, params[])
 {
 	new id,string[100];
@@ -55988,6 +56295,7 @@ CMD:recept(playerid, params[])
 	PlayerDrunkLevel[id]=1;
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:delldrugs(playerid, params[])
 {
 	if(PlayerInfo[playerid][pDrugs] < 1) return SendClientMessage(playerid,COLOR_GREY, "У вас нет наркотиков");
@@ -55996,6 +56304,7 @@ CMD:delldrugs(playerid, params[])
 	SendClientMessage(playerid,-1,"Вы успешно выкинули все наркотики.");
 	return 1;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:usedrugs(playerid, params[])
 {
 	if(UseDrugsTime[playerid] > 120) return false;
@@ -56651,6 +56960,7 @@ public Stopenanim(playerid)
 	ClearAnims(playerid);
 	return 1;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:kvartira(playerid,params[])
 {
 	if(ADuty[playerid]!=228) return cmd_apanel(playerid,"");
@@ -57055,6 +57365,7 @@ CheckPlayerGoCuff(playerid)
 	cuffer[playerid]=0;
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:gotome(playerid, params[])
 {
 	if(IsACop(playerid))
@@ -57093,6 +57404,7 @@ CMD:gotome(playerid, params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:ungotome(playerid, params[])
 {
 	if(IsACop(playerid))
@@ -57123,6 +57435,7 @@ GoPlayerAnimation(playerid, Float:X, Float:Y, Float:Z)
 	ApplyAnimation(playerid, "PED", "SPRINT_PANIC", 4.1, 0, 1, 1, 0, 0, 1);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:pgetip(playerid, params[])
 {
 	new string[300],stri[2000];
@@ -57148,6 +57461,7 @@ CMD:pgetip(playerid, params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:accept(playerid,param[])
 {
 	new string[400];
@@ -57184,6 +57498,7 @@ CMD:accept(playerid,param[])
 	PanelPlayerID[playerid]=-1;
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:nope(playerid,param[])
 {
 	new string[300];
@@ -57197,6 +57512,7 @@ CMD:nope(playerid,param[])
 	PanelPlayerID[playerid]=-1;
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:sellcard(playerid,param[])
 {
 	new string[400];
@@ -57222,6 +57538,7 @@ CMD:sellcard(playerid,param[])
 	Getemer[playerid]=CurrentTimer+5;
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:repare(playerid,param[])
 {
 	new carid = GetPlayerVehicleID(playerid);
@@ -57246,7 +57563,7 @@ CMD:repare(playerid,param[])
 	Ingatre[param[0]]=1;
 	return true;
 }
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:filscar(playerid,param[])
 {
 	new carid = GetPlayerVehicleID(playerid);
@@ -57272,6 +57589,7 @@ CMD:filscar(playerid,param[])
 	Ingatre[param[0]]=2;
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:mileagereset(playerid,param[])
 {
 	new carid = GetPlayerVehicleID(playerid);
@@ -57293,6 +57611,7 @@ CMD:mileagereset(playerid,param[])
 	Ingatre[param[0]]=3;
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:azsmonitor(playerid, params[])
 {
 	new carid = GetPlayerVehicleID(playerid);
@@ -57310,6 +57629,7 @@ CMD:azsmonitor(playerid, params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:contractfill(playerid,param[])
 {
 	new carid = GetPlayerVehicleID(playerid);
@@ -57338,6 +57658,7 @@ CMD:contractfill(playerid,param[])
 
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:check(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] < 1) return false;
@@ -57374,6 +57695,7 @@ COMMAND:givekey(playerid, params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:makeadmin(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] < 5) return false;
@@ -57401,6 +57723,7 @@ CMD:makeadmin(playerid, params[])
 	//aml(16, playerid, Name(id), "", admin);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:makehelper(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin] < 4) return false;
@@ -57417,6 +57740,7 @@ CMD:makehelper(playerid, params[])
 	//aml(16, playerid, Name(id), "", admin);
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 /*CMD:makehelperoff(playerid, params[])
 {
 	new name[25];
@@ -57437,6 +57761,7 @@ CMD:makehelper(playerid, params[])
 	SendClientMessage(playerid, COLOR_GREY, "Хелпер снят в оффлайне!");
 	return 1;
 }*/
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:helperoff(playerid, params[])
 {
 	new name[25];
@@ -57479,6 +57804,7 @@ void OnCheckOffHelperAccounts(playerid, name[], level)
 	}
 	return 1;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:hotel(playerid, params[])
 {
 	if(PlayerInfo[playerid][pFrom] == -1) return SendClientMessage(playerid,-1,"Вы не проживаете в отеле!");
@@ -57486,6 +57812,7 @@ CMD:hotel(playerid, params[])
 	return true;
 }
 ALTX:hotel("/отель");
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 /*CMD:promokod(playerid, params[])
 {
 	new Bonus_Name[MAX_PLAYER_NAME+1];
@@ -57532,6 +57859,7 @@ ALTX:hotel("/отель");
 	return true;
 }
 ALTX:promokod("/ChipBonus","/чипбонус","/чиповский","/CHUMAKOV","/alexfresh","/Andrey","/pavlov","/mep","/kristiplay","/bic","/coffi","/tags","/filipin","/quantum","/warpath","/richi","/spike","/bylic","/5opka","/GERERAMAFIA","/spyro","/demaster","/EFFECT","/braindit");*/
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:acpenalty(playerid, params[])
 {
 	if(ADuty[playerid]!=228) return cmd_apanel(playerid,"");
@@ -57544,6 +57872,7 @@ CMD:acpenalty(playerid, params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:disablenewac(playerid, params[])
 {
 	if(ADuty[playerid]!=228) return cmd_apanel(playerid,"");
@@ -57556,6 +57885,8 @@ CMD:disablenewac(playerid, params[])
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 Myitems(playerid)
 {
 	new zigara[6][35],string[700];
