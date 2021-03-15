@@ -7816,7 +7816,7 @@ public OnGameModeInit()
 	SendRconCommand("password ");
 	SendRconCommand("language Russian/Русский");
 	SendRconCommand("ackslimit 15000");
-	SetGameModeText("MOORPG");
+	SetGameModeText("Online");
 	SendRconCommand("weburl www.sky8web.ru");
 	//mysql = mysql_current_handle();
 	///	if(mysql == 0)
@@ -11014,7 +11014,7 @@ public OnGameModeInit()
 	TextDrawFont(URL[1], 2);
 	TextDrawSetProportional(URL[1], 1);
 
-	URL[2] = TextDrawCreate(569.823364, 4.083353, "RolePlay");
+	URL[2] = TextDrawCreate(569.823364, 4.083353, "Online");
 	TextDrawLetterSize(URL[2], 0.181764, 1.401666);
 	TextDrawAlignment(URL[2], 1);
 	TextDrawColor(URL[2], -1);
@@ -20570,7 +20570,7 @@ public OnPlayerPickUpDynamicPickup(playerid, pickupid)
 			if(BizEntered[playerid] != -1)
 			{
 				BizEntered[playerid] = -1;
-
+				
 				Fix_SetPlayerInterior(playerid,0);
 				Fix_SetPlayerVirtualWorld(playerid,0);
 				J_SetPlayerPos(playerid,BizInfo[i][bEnter_X],BizInfo[i][bEnter_Y],BizInfo[i][bEnter_Z]);
@@ -21945,7 +21945,13 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 			//printf("%f %f   %f %f",PlayerInfo[ playerid ][ AC_AirBrk ][ 0 ], PlayerInfo[ playerid ][ AC_AirBrk ][ 1 ],  x, y);
 		    if(GetDistance(PlayerInfo[ playerid ][ AC_AirBrk ][ 0 ], PlayerInfo[ playerid ][ AC_AirBrk ][ 1 ],  BumBoxPos[playerid][0], BumBoxPos[playerid][1]) < 3.0)
 		    {
-				ShowPlayerDialogEx(playerid,2107,DIALOG_STYLE_LIST, "Выберите радио волну:","{FF0000}0. Отключить радио\n1.Sky Web FM\n2. Зайцев FM\n{FF2C00}3. Европа +\n{FF5000}4. Record FM\n{FF8700}5. Hit FM", "Включить", "Отмена");
+				ShowPlayerDialogEx(playerid,2107,DIALOG_STYLE_LIST, "Выберите радио волну:","{FF0000}0. Отключить радио\n\
+				{FF5000}1. Русское радио\n\
+				{FF5000}2. Рок, альтернативный рок, метал\n\
+				{FF2C00}3. Европа +\n\
+				{FF5000}4. Record FM\n\
+				{FF5000}5. Russian Mix\n\
+				{FF8700}6. Супердискотека 90-х", "Включить", "Отмена");
 			}
 		}
 	}
@@ -24030,7 +24036,7 @@ IsValidEMail(email[])
 	ResetDynamicCPs(playerid);
 	DisableAllRaceCPs(playerid);
 	new str[100],string[400];
-	strcat(string,"{FFFFFF}Добро пожаловать на "COLOR_PROJECT_EX"Qunix Role Play\n");
+	strcat(string,"{FFFFFF}Добро пожаловать на "COLOR_PROJECT_EX"Qunix Online\n");
 	format(str,sizeof(str),"{FFFFFF}Никнейм "COLOR_PROJECT_EX"%s{FFFFFF} не зарегистрирован{FFFFFF}\n",Name(playerid));
 	strcat(string,str);
 	strcat(string,Language[28][lang]);
@@ -31492,12 +31498,12 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 			case 1:
 				{
 				    StopAudioStreamForPlayer(playerid);
-				   	PlayAudioStreamForPlayer(playerid, "http://s02.radio-tochka.com:5520/radio");
+				   	PlayAudioStreamForPlayer(playerid, "http://play.russianradio.eu/stream");
 				}
 			case 2:
 				{
 					StopAudioStreamForPlayer(playerid);
-					PlayAudioStreamForPlayer(playerid, "http://www.zaycev.fm:9001/rnb/ZaycevFM(128)");
+					PlayAudioStreamForPlayer(playerid, "http://galnet.ru:8000/hard");
 
 				}
 			case 3:
@@ -31513,7 +31519,12 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 			case 5:
 				{
 					StopAudioStreamForPlayer(playerid);
-					PlayAudioStreamForPlayer(playerid, "http://online-hitfm.tavrmedia.ua/HitFM");
+					PlayAudioStreamForPlayer(playerid, "http://air.radiorecord.ru:8102/rus_320");
+				}
+			case 6:
+				{
+					StopAudioStreamForPlayer(playerid);
+					PlayAudioStreamForPlayer(playerid, "http://air.radiorecord.ru:8102/sd90_320");
 				}
 				//	case 5:	return ShowPlayerDialogEx(playerid, 65, DIALOG_STYLE_INPUT, "БумБокс","{ffffff}Введи сылку на свою песенку и прокочай толпу!","Включить","Отмена");
 			}
@@ -52097,7 +52108,13 @@ CMD:radio(playerid, params[])
 {
 	if(!PlayerInfo[playerid][pRadio] && !IsPlayerInAnyVehicle(playerid)) return SendClientMessage(playerid,COLOR_GREY,"{FF0000}x {AFAFAF}У вас нет радио");
 
-	ShowPlayerDialogEx(playerid,2054,DIALOG_STYLE_LIST, "Выберите радио волну:","{FF0000}0. Отключить радио\n1.Sky Web FM\n2. Зайцев FM\n{FF2C00}3. Европа +\n{FF5000}4. Record FM\n{FF8700}5. Hit FM", "Включить", "Отмена");
+	ShowPlayerDialogEx(playerid,2054,DIALOG_STYLE_LIST, "Выберите радио волну:","{FF0000}0. Отключить радио\n\
+	{FF5000}1. Русское радио\n\
+	{FF5000}2. Рок, альтернативный рок, метал\n\
+	{FF2C00}3. Европа +\n\
+	{FF5000}4. Record FM\n\
+	{FF5000}5. Russian Mix\n\
+	{FF8700}6. Супердискотека 90-х", "Включить", "Отмена");
 
 	return true;
 }
@@ -52196,7 +52213,7 @@ CMD:s(playerid, params[])
 	if(sscanf(params,"s[100]",result)) return SendClientMessage(playerid,COLOR_PROJECT,"Используйте: {FFFFFF}/s [текст]");
 	if(IsAMg(result))
 	{
-		SendClientMessage(playerid,COLOR_GREY,"Вы использовали слово связанное с реальной жизнью, в Role Play режиме они не доступны!");
+		SendClientMessage(playerid,COLOR_GREY,"Вы использовали слово связанное с реальной жизнью, в Online режиме они не доступны!");
 		SendClientMessage(playerid,COLOR_WHITE,"Для отправки таких сообщений используйте /b текст.");
 		return false;
 	}
@@ -57887,6 +57904,9 @@ CMD:disablenewac(playerid, params[])
 }
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//   В Е Щ И   И Г Р О К А   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Myitems(playerid)
 {
 	new zigara[6][35],string[700];
@@ -64000,6 +64020,8 @@ SetAttachToSkin(playerid, type, skinid, setobject)
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 forward MysqlCheckTelNum(playerid, telephone);
 public MysqlCheckTelNum(playerid, telephone)
@@ -64095,7 +64117,7 @@ ToCheat(type,playerid, code = 0)
 				else
 				{
 					ShowPlayerDialogEx(playerid,0,0,"Античит","Внимание! Код античита, который вас посадил все еще проходит тестирование\nЕсли он сработал ложно, опишите\
-					во всех деталях на форум\nто что вы делали перед тем, как вас сюда посадило.\n	sky8web.ru/forum","Ок","");
+					во всех деталях в группу\nто что вы делали перед тем, как вас сюда посадило.\n	vk.com/sky8web","Ок","");
 				}
 			}
 		}
@@ -65017,6 +65039,9 @@ ShowDuttyDialog(playerid)
 	}
 	return true;
 }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ShoowSpedometr(playerid,carid)
 {
 	if(Speedometr[playerid] == false)
@@ -65116,6 +65141,9 @@ ShoowSpedometr(playerid,carid)
 	}
 	return true;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 /*GetXYInFrontOfPoint2_z(Float:x, Float:y, &Float:x2, &Float:y2, Float:A, Float:distance)
 {
 	x2 = x + (distance * floatsin(-A, degrees));
@@ -66326,6 +66354,9 @@ SetPlayerBuyItem(playerid)
 	SelectTextDraw(playerid, COLOR_PROJECT);
 	return true;
 }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 stock HLP_GetMessage(id)
 {
 	new string[2000];
@@ -66333,8 +66364,8 @@ stock HLP_GetMessage(id)
 	{
 	case 0:
 		{
-			format(string, sizeof(string), "{FFFFFF}Доброго времени суток!\nВы находитесь на сервере с {FFCB77}Role Play{FFFFFF} режимом.\n");
-			format(string, sizeof(string), "%s{FFCB77}Role Play{FFFFFF} - Это вид игры, в которой вы отыгрываете свою роль в процессе игры.\n", string);
+			format(string, sizeof(string), "{FFFFFF}Доброго времени суток!\nВы находитесь на сервере с {FFCB77}Online{FFFFFF} режимом.\n");
+			format(string, sizeof(string), "%s{FFCB77}Online{FFFFFF} - Это вид игры, в которой вы отыгрываете свою роль в процессе игры.\n", string);
 			format(string, sizeof(string), "%sВы можете быть таксистом, механником, водителем автобуса или полицейским.\n", string);
 			format(string, sizeof(string), "%sУ каждого есть выбор, кем он хочет быть.\n\n", string);
 			format(string, sizeof(string), "%sИграя на сервере ваш лвл повышается автоматически либо при прохождении квестов.\n", string);
@@ -66367,7 +66398,7 @@ stock HLP_GetMessage(id)
 			format(string, sizeof(string), "{FFFFFF}Список игроков можно посмотреть нажав клавишу '{FFCB77}TAB{FFFFFF}'.\n");
 			format(string, sizeof(string), "%sТам вы увидите список, в формате: {FFCB77}0 | Nick_Name | 10 | 100\n", string);
 			format(string, sizeof(string), "%sПервое число (0) {FFFFFF}- Это уникальный индентефикатор игрока проще говоря: Айди (Номер игрока на сервере).\n", string);
-			format(string, sizeof(string), "%sДалее следует {FFCB77}ник игрока (Nick_Name) {FFFFFF}- Зачастую можно увидеть ник в формате {FFCB77}Имя_Фамилия {FFFFFF}(Это часть {FFCB77}Role Play {FFFFFF}процесса).\n", string);
+			format(string, sizeof(string), "%sДалее следует {FFCB77}ник игрока (Nick_Name) {FFFFFF}- Зачастую можно увидеть ник в формате {FFCB77}Имя_Фамилия {FFFFFF}(Это часть {FFCB77}Online {FFFFFF}процесса).\n", string);
 			format(string, sizeof(string), "%sПосле ника, идёт {FFCB77}уровень игрока {FFFFFF}- Это показатель как долго человек играет на сервере.\n", string);
 			format(string, sizeof(string), "%sИ {FFCB77}последнее число (100) {FFFFFF}- Это пинг, не слишком важная вещь, но если интересно:\n", string);
 			format(string, sizeof(string), "%sЭто отрезок времени, который проходит между запросом и ответом на сервер.\n\n", string);
@@ -66395,7 +66426,7 @@ stock HLP_GetMessage(id)
 			format(string, sizeof(string), "%sЕсли путь законника вам не нравится - Можете стать бандитом и продавать\n", string);
 			format(string, sizeof(string), "%s\tоружие с наркотиками, участвовать в драках за районы. Можете пойти в мафию\n", string);
 			format(string, sizeof(string), "%sЧтобы крышевать бизнесы, похищать ключевых людей штата, ездить на стрелы и разборки.\n", string);
-			format(string, sizeof(string), "%sТак же можете стать репортёром и освещать скадальные новости.\n", string);
+			format(string, sizeof(string), "%sТак же можете стать репортёром и освещать скандальные новости.\n", string);
 			format(string, sizeof(string), "%sА можно просто вести познавательную передачу или пойти в больницу и лечить людей.\n", string);
 			format(string, sizeof(string), "%sЧем выше у вас уровень, тем больше дорог открыто для вас.", string);
 		}
@@ -66436,6 +66467,8 @@ stock HLP_GetMessage(id)
 	}
 	return string;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 HLP_ShowList(playerid)
 {
@@ -67140,6 +67173,9 @@ AntiGunCheat(playerid)
 	if(GunWarnings[playerid] > 0) {GunWarnings[playerid] = GunWarnings[playerid] - 1;} // очистка подозрений
 	return true;
 }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 BumboxSync(i)
 {
     new ok = 0;
@@ -67158,12 +67194,12 @@ BumboxSync(i)
 				}
 			case 1:
 				{
-					PlayAudioStreamForPlayerFix(i, "http://s02.radio-tochka.com:5520/radio", BumBoxPos[k][0], BumBoxPos[k][1], BumBoxPos[k][2], 30.0, 1);
+					PlayAudioStreamForPlayerFix(i, "http://play.russianradio.eu/stream", BumBoxPos[k][0], BumBoxPos[k][1], BumBoxPos[k][2], 30.0, 1);
 					break;
 				}
 			case 2:
 				{
-					PlayAudioStreamForPlayerFix(i, "http://www.zaycev.fm:9001/rnb/ZaycevFM(128)", BumBoxPos[k][0], BumBoxPos[k][1], BumBoxPos[k][2], 30.0, 1);
+					PlayAudioStreamForPlayerFix(i, "http://galnet.ru:8000/hard", BumBoxPos[k][0], BumBoxPos[k][1], BumBoxPos[k][2], 30.0, 1);
 					break;
 				}
 			case 3:
@@ -67178,7 +67214,12 @@ BumboxSync(i)
 				}
 			case 5:
 				{
-					PlayAudioStreamForPlayerFix(i, "http://online-hitfm.tavrmedia.ua/HitFM", BumBoxPos[k][0], BumBoxPos[k][1], BumBoxPos[k][2], 30.0, 1);
+					PlayAudioStreamForPlayerFix(i, "http://air.radiorecord.ru:8102/rus_320", BumBoxPos[k][0], BumBoxPos[k][1], BumBoxPos[k][2], 30.0, 1);
+					break;
+				}
+			case 6:
+				{
+					PlayAudioStreamForPlayerFix(i, "http://air.radiorecord.ru:8102/sd90_320", BumBoxPos[k][0], BumBoxPos[k][1], BumBoxPos[k][2], 30.0, 1);
 					break;
 				}
 			default:
@@ -67192,6 +67233,8 @@ BumboxSync(i)
 	if(ok == 0) {StopAudioStreamForPlayerFix(i);}
 	return true;
 }
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 PlayAudioStreamForPlayerFix(playerid, url[], Float:posX = 0.0, Float:posY = 0.0, Float:posZ = 0.0, Float:distance = 50.0, usepos = 0)
 {
 	if(bumreader[playerid] != 0) return true;

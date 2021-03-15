@@ -1,4 +1,6 @@
 # URP
+v0.03.15.2	Добавлены радиостанции
+
 v0.03.14	Добавлены файлы для работы сервера в Windows:
 			/plugins/crashdetect.dll
 			/plugins/dc_cmd.dll
