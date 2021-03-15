@@ -20543,6 +20543,8 @@ public OnPlayerPickUpDynamicPickup(playerid, pickupid)
 		if(pickupid == BizCP[i])
 		{
 			InfoBiz[playerid] = i;
+			BizEntered[playerid] = -1;
+
 			if(GetString(BizInfo[InfoBiz[playerid]][bOwner],"The State"))
 			{
 				new biz = InfoBiz[playerid];
@@ -20565,6 +20567,9 @@ public OnPlayerPickUpDynamicPickup(playerid, pickupid)
 			}
 			return true;
 		}
+
+		if(GetPlayerVirtualWorld(playerid)!=0 && pickupid != BizPick[i]) BizEntered[playerid] = i;
+
 		if(pickupid == BizPick[i])
 		{
 			if(BizEntered[playerid] != -1)
