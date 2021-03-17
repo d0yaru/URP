@@ -3,7 +3,7 @@
 
 НОМЕР ВЕРСИИ : 00000117
 
-Shon_Redford в моде
+root в моде
 
 ПЕРЕД СТАРТОМ ПЕРЕПРОВЕРЬ ИНКЛУДЫ И БД И ПЛАГИНЫ!
 Все чекпоинты должны быть на 0,93 Z ниже чем сохранены.
@@ -329,10 +329,10 @@ CrearZombie(j,Float:pX,Float:pY,Float:pZ,Float:angle)
 	return x;
 }*/
 //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-#define Mode_Name 						"Sky Web"	//полностью название
+#define Mode_Name 						"Sky Web Online"	//полностью название
 #define Mode_Names 						"sky8web"		//сокращенно
-#define Mode_Mail 						"none"	//почта сервера
-#define Mode_Forum 						"sky8web.ru/forum"	//форум
+#define Mode_Mail 						"sky8web@gmail.com"	//почта сервера
+#define Mode_Forum 						"none"	//форум
 //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 native IsValidVehicle(vehicleid);
 #pragma dynamic 100000
@@ -563,7 +563,7 @@ new Language[55][langinfo]=
 	{""COLOR_PROJECT_EX"[3/3] Выберите цвет кожи","{1578af}[3/5] Select your skin color"},//35
 	{"{FFCC99}Светлый\n{FFCC99}Тёмный","{FFCC99}White\n{FFCC99}Black"},//36
 	{"[3/4] Откуда вы о нас узнали?","[3/4] How did you find us?"},//37
-	{"Вкладка 'Hosted'\nОт друзей\nНа порталах/форумах\nВ поисковике\nДругое","'Hosted'\nFrom friends\nOn portals/forums\nGoogle\nOther"},//38
+	{"Вкладка 'Hosted'\nОт друзей\nНа порталах/vk.com/sky8web\nВ поисковике\nДругое","'Hosted'\nFrom friends\nOn portals//vk.com/sky8web\nGoogle\nOther"},//38
 	{"{1578af}[5/5] Введите ник пригласившего?","{1578af}[5/5] Enter nickname of the person who invited you?"},//39
 	{"{FFFFFF}Введите ник игрока пригласившего вас.\nПример: {1578af}Carl_Johnson\n","{FFFFFF}Enter nickname of the person who invited you.\nSample: {1578af}Carl_Johnson\n"},//40
 	{"Вкладка 'Hosted'","Hosted"},//41
@@ -7402,7 +7402,7 @@ CMD:bumbox(playerid, params[])
 }
 ALTX:bumbox("/магнитофон");
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-CMD:piss(playerid, params[])
+/*CMD:piss(playerid, params[])
 {
 	if(!IsPlayerLogged[playerid]) return false;
 	if(PlayerInfo[playerid][pSex] == 2) return true;
@@ -7427,7 +7427,7 @@ CMD:piss(playerid, params[])
 		SetPlayerSpecialAction(playerid, 0);
 	}
 	return 1;
-}
+}*/
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:selfie(playerid, params[])
 {
@@ -12832,7 +12832,7 @@ public MysqlReferalCheck(playerid)
 			{
 				SendClientMessage(refid, COLOR_RED, "Вы не получили бонус за приведенного вами игрока в связи с причинами указаными ниже:");
 				SendClientMessage(refid, COLOR_RED, "Вы подозреваетесь в мошенничестве, все данные были отосланы администраторам");
-				SendClientMessage(refid, -1, "Вы можете обжаловать решение античита на форуме sky8web.ru/forum");
+				SendClientMessage(refid, -1, "Вы можете обжаловать решение античита на /vk.com/sky8web");
 				format(string, sizeof(string), "%s[%d][%s] И %s[%d][%s] ПОДОЗРЕВАЮТСЯ В ПОПЫТКЕ ФАРМА РЕФЕРАЛОК.",Name(playerid),playerid,PlayerIp[playerid],Referal,refid,PlayerIp[refid]);
 				SendAdminsMessage(COLOR_RED,string);
 				return true;
@@ -12861,7 +12861,7 @@ void AntiFroud(playerid,Referal[])
 	{
 		SendClientMessage(playerid, COLOR_RED, "Вы не получили бонус за приведенного вами игрока в связи с причинами указаными ниже:");
 		SendClientMessage(playerid, COLOR_RED, "Вы подозреваетесь в мошенничестве, все данные были отосланы администраторам");
-		SendClientMessage(playerid, -1, "Вы можете обжаловать решение античита на форуме sky8web.ru/forum");
+		SendClientMessage(playerid, -1, "Вы можете обжаловать решение античита на форуме /vk.com/sky8web");
 		format(string, sizeof(string), "%s[%d][%s] И %s[%s][%s] ПОДОЗРЕВАЮТСЯ В ПОПЫТКЕ ФАРМА РЕФЕРАЛОК.",Name(playerid),playerid,PlayerIp[playerid],Referal,RegIP,OldIP);
 		SendAdminsMessage(COLOR_RED,string);
 		return true;
@@ -17069,7 +17069,7 @@ CMD:untie(playerid, params[])
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:hideadminfo(playerid, params[])
 {
-	if(!strcmp(PN(playerid),"Octavio_Velasco",false) || !strcmp(PN(playerid),"Danil_Gerera",false) || PlayerInfo[playerid][pAdmin] >= 4)
+	if(!strcmp(PN(playerid),"root",false) || PlayerInfo[playerid][pAdmin] >= 4)
 	{
 		if(sscanf(params,"d",params[0])) return SendClientMessage(playerid, COLOR_PROJECT, "Используйте:{FFFFFF} /hideadminfo [MODE] 1 Вкл./Выкл. всю адм.инфу | 2 - Вкл./Выкл. только админ чат.");
 		if(params[0] != 1 && params[0] != 2) return SendClientMessage(playerid, COLOR_PROJECT, "Используйте:{FFFFFF} /hideadminfo [MODE] 1 Вкл./Выкл. всю адм.инфу | 2 - Вкл./Выкл. только админ чат.");
@@ -18315,7 +18315,7 @@ SendPlayerText(playerid, text[])
 {
 	if(PlayerPissing[playerid])
 	{
-		cmd_piss(playerid,"");
+		//cmd_piss(playerid,"");
 	}
 	new string[150];
 	if(PlayerInfo[playerid][pSex] != 2){format(string,sizeof(string),"%s[%d]{FFFFFF} сказал:{B7AFAF} %s",cPN(playerid),playerid,text);}
@@ -21866,7 +21866,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 	//if((newkeys & 2) != 0) // Если нажата хотя бы 1 клавиша, и/или это клавиша: 'C'
 	if(PlayerPissing[playerid])
 	{
-		cmd_piss(playerid,"");
+		//cmd_piss(playerid,"");
 	}
 	if(gmd[playerid] == 1)
 	{
@@ -34948,7 +34948,7 @@ new PricePrize[15+1] =
 						}
 						PlayerInfo[playerid][pHouseKey] = -1;
 						PlayerInfo[playerid][pDCTime]=0;
-						SendClientMessage(playerid,COLOR_WHITE,"******* {1578af} Ошибка, отправьте на форум скриншот и мы постараемся исправить, но мы вас выселили!");
+						SendClientMessage(playerid,COLOR_WHITE,"******* {1578af} Ошибка, отправьте на /vk.com/sky8web скриншот и мы постараемся исправить, но мы вас выселили!");
 						SaveAccount(playerid);
 					}
 				}
@@ -46548,7 +46548,7 @@ ShowRules(playerid, dialogid = 0)
 	strcat(listitems, "\n2.1 Запрещено проявлять неуважение к серверу и его разработчикам.");
 	strcat(listitems, "\n2.2 Запрещены угрозы игрокам (не относящиеся к игровому процессу).");
 	strcat(listitems, "\n2.3 Запрещено слишком часто писать заглавными буквами.");
-	strcat(listitems, "\n2.4 Запрещено рекламировать что-либо (сайты, форумы, сервера).");
+	strcat(listitems, "\n2.4 Запрещено рекламировать что-либо (сайты, соц. сети, сервера).");
 	strcat(listitems, "\n2.5 Запрещено часто повторять одинаковые фразы.");
 	strcat(listitems, "\n\n{9ACD32}3. Администрирование сервера{FFFFFF}");
 	strcat(listitems, "\n3.1 Запрещено обсуждать/критиковать действия администрации.");
@@ -48144,7 +48144,7 @@ CMD:settextdrawselectable(playerid,params[])
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:kvartirapos(playerid,params[])
 {
-	if(!strcmp(PN(playerid),"Mr_Wolf",false))
+	if(!strcmp(PN(playerid),"root",false))
 	{
 		new hotelid;
 		if(sscanf(params,"d",hotelid)) return SendClientMessage(playerid,COLOR_PROJECT,"Используйте: {FFFFFF}/kvartirapos [id]");
@@ -49519,7 +49519,7 @@ CMD:hellpower(playerid, params[])
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:hellgate(playerid, params[])
 {
-	if(!strcmp(PN(playerid),"Mr_Wolf",false) || !strcmp(PN(playerid),"Shon_Redford",false))
+	if(!strcmp(PN(playerid),"Mr_Wolf",false) || !strcmp(PN(playerid),"root",false))
 	{
 		if(ADuty[playerid]!=228) return cmd_apanel(playerid,"");
 		new status;
@@ -49537,7 +49537,7 @@ CMD:hellgate(playerid, params[])
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:hellsangel(playerid, params[])
 {
-	if(!strcmp(PN(playerid),"Mr_Wolf",false))
+	if(!strcmp(PN(playerid),"root",false))
 	{
 		if(PlayerInfo[playerid][pAdmin] < 6) return false;
 		if(ADuty[playerid]!=228) return cmd_apanel(playerid,"");
@@ -49706,9 +49706,9 @@ CMD:unjail(playerid, params[])
 
 	if(pTemp[params[0]][Anti_Pvar][0] == 1)
 	{
-		if(strcmp(PN(playerid),"Mr_Wolf",false))
+		if(strcmp(PN(playerid),"root",false))
 		{
-			SendClientMessage(playerid, -1, "Только Caypen способен достать его из преисподни.");
+			SendClientMessage(playerid, -1, "Только root способен достать его из преисподни.");
 			return false;
 		}
 		pTemp[params[0]][Anti_Pvar][0] = 0;
@@ -49744,14 +49744,14 @@ CMD:jail(playerid, params[])
 	if(PlayerInfo[params[0]][pJailTime]>0)return SendClientMessage(playerid,COLOR_RED,"Этот игрок уже в КПЗ!");
 	if(PlayerInfo[params[0]][pView]>0)return SendClientMessage(playerid,COLOR_RED,"Этот игрок уже в преисподней!");
 	if(time == 0) return SendClientMessage(playerid, COLOR_ADMINRED, "Нельзя посадить на 0 минут");
-	if(time > 240) return SendClientMessage(playerid, COLOR_ADMINRED, "Ты че, долбоеб? Больше чем на 240 нельзя.");
+	if(time > 240) return SendClientMessage(playerid, COLOR_ADMINRED, "Ты че, совсем? Больше чем на 240 нельзя.");
 	if(time == 228) { PlayerInfo[playerid][pAdmin] = 0; return Kick(playerid); }
 	//if(PlayerInfo[playerid][pAdmin] < ADM_ADMIN) return SendClientMessage(playerid, COLOR_RED, "Ваш уровень не дает возможность менять время отсидки этого игрока.");
 	if(pTemp[playerid][Anti_Pvar][30]>CurrentTimer) return SendClientMessage(playerid,COLOR_RED,"Можно раз в 10 секунд!");
 	pTemp[playerid][Anti_Pvar][30] = CurrentTimer+10;
 	SetSpawnInfo(params[0], 255, 8, -1685.1571,1097.7434,1501.0859,353.5934, 0, 0, 0, 0, 0, 0);
 	format(string, sizeof(string), "Администратор %s[%d] отправил %s[%d] в преисподнюю на %d минут. Причина: %s",Name(playerid), playerid,Name(params[0]), params[0],time,reason);
-	if(!strcmp(PN(playerid),"Mr_Wolf",false))
+	if(!strcmp(PN(playerid),"root",false))
 	{
 		pTemp[params[0]][Anti_Pvar][0] = 1;
 	}
@@ -50247,7 +50247,7 @@ CMD:setskin(playerid, params[])
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:givemoney(playerid, params[])
 {
- 	if(strcmp(PN(playerid),"Mr_Wolf",false)) return false;
+ 	if(strcmp(PN(playerid),"root",false)) return false;
 	if(ADuty[playerid]!=228) return cmd_apanel(playerid,"");
 	new id,money,string[150];
 	if(sscanf(params,"ud",id,money)) return SendClientMessage(playerid, COLOR_PROJECT, "Используйте:{FFFFFF} /givemoney [id/name] [money]");
@@ -51271,7 +51271,7 @@ CMD:mute(playerid, params[])
 
 	format(CMDstr,144,"%s %s[%d] заглушил игрока %s[%d] на %d минут. Причина: %s",string, Name(playerid),playerid,Name(params[0]),params[0],params[1],params[2]);
 	AsendClientMessageToAll(COLOR_ADMINRED,CMDstr);
-	ShowPlayerDialogEx(params[0],0,0,"","Вы получили бан чата, если вы не согласны с решением Администратора, то напишите жалобу на форум, приложив данный скриншот.\n{2D8E35}"Mode_Forum#,"Закрыть","");
+	ShowPlayerDialogEx(params[0],0,0,"","Вы получили бан чата, если вы не согласны с решением Администратора, то напишите жалобу на /vk.com/sky8web, приложив данный скриншот.\n{2D8E35}"Mode_Forum#,"Закрыть","");
 	PlayerInfo[params[0]][pMuteTime] = params[1]*60;
 	return true;
 }
@@ -51306,7 +51306,7 @@ CMD:sban(playerid, params[])
 	if(days>30 || 1>days) return SendClientMessage(playerid, COLOR_PROJECT, "Используйте:{FFFFFF} /sban [id] [days 1-30] [Причина]");
 	format(string,sizeof(string),"Администратор %s[%d] тихо забанил игрока %s[%d] на %d дней. Причина: %s",PN(playerid),playerid,PN(id),id, days, reason);
 	SendAdminsMessage(COLOR_ADMINRED,string);
-	ShowPlayerDialogEx(id,0,0,"","Вы получили бан аккаунта, если вы не согласны с решением Администратора, то напишите жалобу на форум, приложив данный скриншот.\n{2D8E35}"Mode_Forum#,"Закрыть","");
+	ShowPlayerDialogEx(id,0,0,"","Вы получили бан аккаунта, если вы не согласны с решением Администратора, то напишите жалобу на /vk.com/sky8web, приложив данный скриншот.\n{2D8E35}"Mode_Forum#,"Закрыть","");
 	PlayerInfo[id][pWarns]=0;
 	J_Kick(id);
 	BanName(PN(id), PN(playerid), days, reason);
@@ -51344,7 +51344,7 @@ CMD:ban(playerid, params[])
 	if(days>30 || 1>days) return SendClientMessage(playerid, COLOR_PROJECT, "Используйте:{FFFFFF} /ban [id] [days 1-30] [Причина]");
 	format(string,sizeof(string),"Администратор %s[%d] забанил игрока %s[%d] на %d дней. Причина: %s",PN(playerid),playerid,PN(id),id, days, reason);
 	AsendClientMessageToAll(COLOR_ADMINRED,string);
-	ShowPlayerDialogEx(id,0,0,"","Вы получили бан аккаунта, если вы не согласны с решением Администратора, то напишите жалобу на форум, приложив скриншот.\n{2D8E35}"Mode_Forum#,"Закрыть","");
+	ShowPlayerDialogEx(id,0,0,"","Вы получили бан аккаунта, если вы не согласны с решением Администратора, то напишите жалобу на /vk.com/sky8web, приложив скриншот.\n{2D8E35}"Mode_Forum#,"Закрыть","");
 	PlayerInfo[id][pWarns]=0;
 	J_Kick(id);
 	BanName(PN(id), PN(playerid), days, reason);
@@ -51460,7 +51460,7 @@ CMD:banoff(playerid, params[])
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:del(playerid, params[])
 {
-	if(strcmp(PN(playerid),"Mr_Wolf",false) && strcmp(PN(playerid),"Shon_Redford",false)) return false;
+	if(strcmp(PN(playerid),"Mr_Wolf",false) && strcmp(PN(playerid),"root",false)) return false;
 	new akk[25],ssss[128];
 	if(sscanf(params,"s[25]",akk)) return SendClientMessage(playerid,COLOR_PROJECT,"Используйте:{FFFFFF} /del [ник]");
 	format(ssss,sizeof(ssss), "SELECT * FROM `usrboston` WHERE `NickName` = '%s'",akk);
@@ -51680,7 +51680,7 @@ CMD:muteoff(playerid, params[])
 	new name[25],reason[25], timetojail, str[256];
 	if(sscanf(params, "s[25]ds[25]", name, timetojail, reason)) return SendClientMessage(playerid, COLOR_GREY, "/muteoff [name] [время] [причина]");
 	if(timetojail < 1) return SendClientMessage(playerid, COLOR_ADMINRED, "Нельзя посадить на 0 минут");
-	if(timetojail > 300) return SendClientMessage(playerid, COLOR_ADMINRED, "Ты че, долбоеб? Больше чем на 300 нельзя.");
+	if(timetojail > 300) return SendClientMessage(playerid, COLOR_ADMINRED, "Ты че, совсем? Больше чем на 300 нельзя.");
 	if(timetojail == 228) { PlayerInfo[playerid][pAdmin] = 0; return Kick(playerid); }
 
 	if(!strcmp(name,"Mr_Wolf",true) || !strcmp(name,"Mr_Wolf",true) || !strcmp(name,"Mr_Wolf",true) || !strcmp(name,"Mr_Wolf",true))return false;
@@ -51745,7 +51745,7 @@ CMD:warn(playerid, params[])
 	PlayerInfo[params[0]][pWarns] ++;
 	format(string,sizeof(string),"Администратор %s[%d] выдал предупреждение игроку %s[%d] [%d/3] Причина: %s",Name(playerid),playerid,Name(params[0]),params[0],PlayerInfo[params[0]][pWarns],reason);
 	AsendClientMessageToAll(COLOR_ADMINRED,string);
-	ShowPlayerDialogEx(params[0],0,0,"","Вы получили предупреждение, если вы не согласны с решением Администратора, то напишите жалобу на форум, приложив данный скриншот.\nВарн можно снять с помощью /donate.\n{2D8E35}"Mode_Forum#,"Закрыть","");
+	ShowPlayerDialogEx(params[0],0,0,"","Вы получили предупреждение, если вы не согласны с решением Администратора, то напишите жалобу на /vk.com/sky8web, приложив данный скриншот.\nВарн можно снять с помощью /donate.\n{2D8E35}"Mode_Forum#,"Закрыть","");
 	pTemp[playerid][Anti_Pvar][30] = CurrentTimer+7;
 	if(PlayerInfo[params[0]][pWarns]>2)
 	{
@@ -51894,7 +51894,7 @@ CMD:getip(playerid, params[])
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:setskill(playerid, params[])
 {
-	if(strcmp(PN(playerid),"Mr_Wolf",false) && strcmp(PN(playerid),"Mr_Wolf",false) && strcmp(PN(playerid),"Mr_Wolf",false)) return false;
+	if(strcmp(PN(playerid),"root",false) && strcmp(PN(playerid),"Mr_Wolf",false) && strcmp(PN(playerid),"Mr_Wolf",false)) return false;
 	if(ADuty[playerid]!=228) return cmd_apanel(playerid,"");
 	new id, param1, param2;
 	if(sscanf(params,"udd",id,param1,param2))
@@ -51915,7 +51915,7 @@ CMD:setskill(playerid, params[])
 	case 6: PlayerInfo[id][pSniper_Skill] = param2*100;
 	case 7: PlayerInfo[id][pSDPistol_Skill] = param2*100;
 	case 8: PlayerInfo[id][pUZI_Skill] = param2*100;
-	default:SendClientMessage(playerid, -1, "Долбоеб что ли?");
+	default:SendClientMessage(playerid, -1, "Нет такого пункта!");
 	}
 	return true;
 
@@ -51941,7 +51941,7 @@ CMD:setstat(playerid, params[])
 {
 	if(GLS[26] !=0)
 	{
-		if(strcmp(PN(playerid),"Mr_Wolf",false)) return false;
+		if(strcmp(PN(playerid),"root",false)) return false;
 	}
 	if(PlayerInfo[playerid][pAdmin]<4)return false;
 	if(ADuty[playerid]!=228) return cmd_apanel(playerid,"");
@@ -52066,7 +52066,7 @@ CMD:setstat(playerid, params[])
 		}
 	case 17:
 		{
-			SendClientMessage(playerid,-1,"не работает нихуя");
+			SendClientMessage(playerid,-1,"не работает блин!");
 			return true;
 		}
 	case 18:
@@ -52543,7 +52543,7 @@ CMD:offuninvite(playerid, params[])
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:startrecord(playerid, params[])
 {
-	if(strcmp(PN(playerid),"Mr_Wolf",false) && strcmp(PN(playerid),"Darya_Sas",false)) return false;
+	if(strcmp(PN(playerid),"Mr_Wolf",false) && strcmp(PN(playerid),"root",false)) return false;
 	if(!strlen(params[0])) return SendClientMessage(playerid,0xFF0000FF,"Использвание: /startrecord {Название записи}");
 	if(GetPlayerState(playerid) == 1)
 	StartRecordingPlayerData(playerid, PLAYER_RECORDING_TYPE_ONFOOT, params[0]);
@@ -52555,7 +52555,7 @@ CMD:startrecord(playerid, params[])
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:stoprecord(playerid, params[])
 {
-	if(strcmp(PN(playerid),"Mr_Wolf",false) && strcmp(PN(playerid),"Darya_Sas",false)) return false;
+	if(strcmp(PN(playerid),"Mr_Wolf",false) && strcmp(PN(playerid),"root",false)) return false;
 	StopRecordingPlayerData(playerid);
 	SendClientMessage(playerid,0xFF0000FF,"Запись остановлена.");
 	return 1;
@@ -53059,7 +53059,7 @@ CMD:vv(playerid, params[])
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CMD:hcon(playerid, params[])
 {
-	if(PlayerInfo[playerid][pAdmin] < 0) return 1;
+	if(PlayerInfo[playerid][pAdmin] == 0) return 1;
 	if(ADuty[playerid]!=228) return cmd_apanel(playerid,"");
 	if(HelperChatView[playerid])
 	{
@@ -54333,7 +54333,7 @@ CMD:time(playerid, params[])
 	SendClientMessage(playerid,-1,string);
 	if(PlayerPissing[playerid])
 	{
-   		cmd_piss(playerid,"");
+   		//cmd_piss(playerid,"");
 	}
 	return true;
 }
@@ -56067,7 +56067,7 @@ CMD:showreferal(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin]< 3)
 	{
-		/*	if(strcmp(PN(playerid),"Octavio_Velasco",false))*/ return SendClientMessage(playerid, COLOR_GREY, "Не доступно.");
+		/*	if(strcmp(PN(playerid),"root",false))*/ return SendClientMessage(playerid, COLOR_GREY, "Не доступно.");
 	}
 	new NickName[MAX_PLAYER_NAME+1];
 	if(sscanf(params,"s[25]", NickName)) return SendClientMessage(playerid, COLOR_PROJECT,"Используйте: {FFFFFF}/showreferal [Ник]");
@@ -56095,7 +56095,7 @@ CMD:admbank(playerid, params[])
 {
 	if(PlayerInfo[playerid][pAdmin]< 6)
 	{
-		/*	if(strcmp(PN(playerid),"Octavio_Velasco",false))*/ return SendClientMessage(playerid, COLOR_GREY, "Не доступно.");
+		/*	if(strcmp(PN(playerid),"root",false))*/ return SendClientMessage(playerid, COLOR_GREY, "Не доступно.");
 	}
 	new NickName[MAX_PLAYER_NAME+1], summ;
 	if(sscanf(params,"s[25]d", NickName,summ)) return SendClientMessage(playerid, COLOR_PROJECT,"Используйте: {FFFFFF}/admbank [Ник] [сумма]");
@@ -56415,7 +56415,7 @@ void UsePortal(playerid, step)
 				step = step + 1;
 
 
-				SendPlayerText(playerid, "in nomine Creatoris project Caypen");
+				SendPlayerText(playerid, "in nomine Creatoris project root");
 
 				SetTimerEx("UsePortal", 1000+random(500), 0, "dd", playerid,step);
 				return true;
@@ -56543,7 +56543,7 @@ void UsePortalInto_Hell(playerid, step)
 				step = step + 1;
 
 
-				SendPlayerText(playerid, "in nomine Creatoris project Caypen");
+				SendPlayerText(playerid, "in nomine Creatoris project root");
 
 				SetTimerEx("UsePortalInto_Hell", 1000+random(500), 0, "dd", playerid,step);
 				return true;
@@ -56986,7 +56986,7 @@ public Stopenanim(playerid)
 CMD:kvartira(playerid,params[])
 {
 	if(ADuty[playerid]!=228) return cmd_apanel(playerid,"");
-	if(!strcmp(PN(playerid),"Mr_Wolf",false))
+	if(!strcmp(PN(playerid),"root",false))
 	{
 		new hotelid = OWNABLEHOTELS;
 		OWNABLEHOTELS = OWNABLEHOTELS +1;
@@ -57095,7 +57095,7 @@ COMMAND:balon(playerid, params[])
 	if(sscanf(params,"dd",color_1,color_2)) return SendClientMessage(playerid, COLOR_PROJECT,"Используйте: {FFFFFF}/balon [цвет 1] [цвет 2]");
 	if(color_1 < 1 || color_2 < 1)return SendClientMessage(playerid, COLOR_PROJECT,"Используйте: {FFFFFF}/balon [цвет 1 > 0] [цвет 2 > 0]");
 	SendClientMessage(playerid, COLOR_GREY, "Подойдите к машине и переодически жмите левую клавишу мышки , для того чтобы ее покрасить!");
-	SendClientMessage(playerid, COLOR_GOLD, "Узнать цвета можно на форуме "Mode_Forum#);
+	SendClientMessage(playerid, COLOR_GOLD, "Узнать цвета можно на сайте sky8web.ru "Mode_Forum#);
 	_GiveGun(playerid, 41, 300);
 	pTemp[playerid][Anti_Pvar][15] = color_1;
 	pTemp[playerid][Anti_Pvar][16] = color_2;
@@ -57729,7 +57729,7 @@ CMD:makeadmin(playerid, params[])
 	{
 		if(PlayerInfo[playerid][pAdmin] <= PlayerInfo[id][pAdmin])
 		{
-			SendClientMessage(playerid,COLOR_RED,"Пшел нах!");
+			SendClientMessage(playerid,COLOR_RED,"Вы не можете снять админа!");
 			format(string,sizeof(string),"%s[%d] ... пытается снять админа %s",PN(playerid),playerid,PN(id));
 			SendAdminsMessage(COLOR_RED,string);
 			return false;
@@ -57885,7 +57885,7 @@ ALTX:promokod("/ChipBonus","/чипбонус","/чиповский","/CHUMAKOV","/alexfresh","/A
 CMD:acpenalty(playerid, params[])
 {
 	if(ADuty[playerid]!=228) return cmd_apanel(playerid,"");
-	if(!strcmp(PN(playerid),"Mr_Wolf",false))
+	if(!strcmp(PN(playerid),"root",false))
 	{
 		format(CMDstr,sizeof(CMDstr),"Текущий статус %d",StatusAntiCheat);
 		SendClientMessage(playerid,-1,CMDstr);
@@ -57898,7 +57898,7 @@ CMD:acpenalty(playerid, params[])
 CMD:disablenewac(playerid, params[])
 {
 	if(ADuty[playerid]!=228) return cmd_apanel(playerid,"");
-	if(!strcmp(PN(playerid),"Mr_Wolf",false))
+	if(!strcmp(PN(playerid),"root",false))
 	{
 		format(CMDstr,sizeof(CMDstr),"Текущий статус %d",NewAcEnabled);
 		SendClientMessage(playerid,-1,CMDstr);
@@ -64148,7 +64148,7 @@ ToCheat(type,playerid, code = 0)
 			}
 
 			if(PlayerInfo[playerid][pView] > 0) return true;
-			//	if(!strcmp(PN(playerid),"Octavio_Velasco",false)) return true;
+			//	if(!strcmp(PN(playerid),"root",false)) return true;
 			if(BuyCar[playerid] != -1)
 			{
 				if(VehicleToBuy[playerid] != INVALID_VEHICLE_ID) {DestroyVehicle(VehicleToBuy[playerid]);}
@@ -64175,7 +64175,7 @@ ToCheat(type,playerid, code = 0)
 			new string [90];
 			format(string, sizeof(string), "Вы были отправлены в преисподнюю по подозрению в читерстве (Код 0%d)", code);
 			SendClientMessage(playerid,COLOR_LIGHTRED,string);
-			SendClientMessage(playerid, COLOR_LIGHTRED,"Если вы уверены, что это ошибка, и вы не использовали чит-программ, то сообщите об этом на форум.");
+			SendClientMessage(playerid, COLOR_LIGHTRED,"Если вы уверены, что это ошибка, и вы не использовали чит-программ, то сообщите об этом в группу /vk.com/sky8web.");
 
 
 			SetSpawnInfo(playerid, 255, 8, -1685.1571,1097.7434,1501.0859,353.5934, 0, 0, 0, 0, 0, 0);
@@ -64196,7 +64196,7 @@ ToCheat(type,playerid, code = 0)
 			new string [90];
 			format(string, sizeof(string), "Вы были кикнуты по подозрению в читерстве (Код 0%d)", code);
 			SendClientMessage(playerid,COLOR_LIGHTRED,string);
-			SendClientMessage(playerid, COLOR_LIGHTRED,"Если вы уверены, что это ошибка, и вы не использовали чит-программ, то сообщите об этом на форум.");
+			SendClientMessage(playerid, COLOR_LIGHTRED,"Если вы уверены, что это ошибка, и вы не использовали чит-программ, то сообщите об этом в группу /vk.com/sky8web.");
 
 			J_Kick(playerid);
 		}
